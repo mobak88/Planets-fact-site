@@ -77,7 +77,8 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.5;
         font-family: 'Spartan', sans-serif;
         font-size: 1.6rem;
-        background-image: url('../assets/background-stars.svg');
+        background-image: url('../public/background-stars.svg');
+        background-color: ${({ theme }) => theme.colors.bodyBackground};
     }
 
     /* A elements that don't have a class get default styles */

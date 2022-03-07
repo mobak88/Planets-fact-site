@@ -8,6 +8,7 @@ const HeaderNavigation = styled.ul`
 
 const HeaderLi = styled.li`
   list-style: none;
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const Navigation = () => {
