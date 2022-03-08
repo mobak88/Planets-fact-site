@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Planets from '../components/planets/Planets';
 import MainSection from '../components/main/MainSection';
@@ -10,42 +10,80 @@ import ContentNavigationContainer from '../components/planetContentNavigation/Co
 import WikiLink from '../components/wikiLink/WikiLink';
 import MercuryImg from '../../public/planet-mercury.svg';
 
-const MercuryMain = styled(MainSection)``;
-
 const MercuryPlanet = styled(Planets)`
   background-image: url(${MercuryImg});
 `;
 
-const MercuryHeading = styled(Heading)``;
-
-const MercuryContent = styled(PlanetContent)``;
-
-const MercuryButton = styled(PlanetContentNavigation)`
+const MercuryButtonOverview = styled(PlanetContentNavigation)`
   &:hover {
     background-color: ${({ theme }) => theme.colors.cerulean};
+  }
+
+  &::before {
+    color: ${({ theme }) => theme.colors.lightGrey};
+    content: '01';
+    margin: 0 2rem 0 2rem;
+  }
+`;
+const MercuryButtonInternal = styled(PlanetContentNavigation)`
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.cerulean};
+  }
+
+  &::before {
+    color: ${({ theme }) => theme.colors.lightGrey};
+    content: '02';
+    margin: 0 2rem 0 2rem;
+  }
+`;
+const MercuryButtonGeology = styled(PlanetContentNavigation)`
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.cerulean};
+  }
+
+  &::before {
+    color: ${({ theme }) => theme.colors.lightGrey};
+    content: '03';
+    margin: 0 2rem 0 2rem;
   }
 `;
 
 const Mercury = () => {
+  const JSONData = '../../data.json';
+  const [content, setContent] = useState(null);
+  const [planetUrl, setPlanetUrl] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(JSONData);
+        const data = await response.json();
+        setContent(data[0].overview.content);
+        setPlanetUrl(data[0].overview.source);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, [content]);
+
   return (
-    <MercuryMain>
+    <MainSection>
       <MercuryPlanet></MercuryPlanet>
       <PlanetContentContainer>
-        <MercuryHeading>Mercury</MercuryHeading>
-        <MercuryContent>
-          Mercury is the smallest planet in the Solar System and the closest to
-          the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest
-          of all the Sun's planets. Mercury is one of four terrestrial planets
-          in the Solar System, and is a rocky body like Earth.
-        </MercuryContent>
-        <WikiLink href={'https://en.wikipedia.org/wiki/Mercury_(element)'} />
+        <Heading>Mercury</Heading>
+        <PlanetContent>{content}</PlanetContent>
+        <WikiLink
+          url={`${planetUrl}`}
+          ariaLabel='Link to WIkipedia article for Mercury'
+        />
       </PlanetContentContainer>
       <ContentNavigationContainer>
-        <MercuryButton>Overview</MercuryButton>
-        <MercuryButton>Internal Structure</MercuryButton>
-        <MercuryButton>Surface Geology</MercuryButton>
+        <MercuryButtonOverview>Overview</MercuryButtonOverview>
+        <MercuryButtonInternal>Internal Structure</MercuryButtonInternal>
+        <MercuryButtonGeology>Surface Geology</MercuryButtonGeology>
       </ContentNavigationContainer>
-    </MercuryMain>
+    </MainSection>
   );
 };
 

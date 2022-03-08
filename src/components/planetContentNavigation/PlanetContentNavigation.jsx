@@ -10,6 +10,7 @@ const Button = styled.button`
   height: 4.8rem;
   font-weight: bold;
   font-size: 1.2rem;
+  text-align: left;
 `;
 
 const PlanetContentNavigation = ({ children, className }) => {

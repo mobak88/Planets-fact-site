@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Trenger ikke å ha bakgrunnsbilde her, kan legge den inn når man lager reusable component versjon av denne.
 const Planet = styled.div`
   width: 29rem;
   height: 29rem;
