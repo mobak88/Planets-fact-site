@@ -6,8 +6,9 @@ import Navigation from './Navigation';
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 2.2rem 4rem 2.7rem 3.2rem;
-  border-bottom: 0.1rem solid #979797;
+  align-items: center;
+  padding: 2.2rem 4rem 2.1rem 3.2rem;
+  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.darkGrey};
 `;
 
 const Header = () => {

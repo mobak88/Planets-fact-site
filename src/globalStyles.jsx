@@ -79,6 +79,9 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.6rem;
         background-image: url('../public/background-stars.svg');
         background-color: ${({ theme }) => theme.colors.bodyBackground};
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     /* A elements that don't have a class get default styles */

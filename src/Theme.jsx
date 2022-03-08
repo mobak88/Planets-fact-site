@@ -16,6 +16,10 @@ const theme = {
     caribbeanGreen: '#1ec2a4',
     blue: '#2d68f0',
   },
+
+  screenSize: {
+    desktop: '144rem',
+  },
 };
 
 const Theme = ({ children }) => (

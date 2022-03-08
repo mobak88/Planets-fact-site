@@ -1,14 +1,17 @@
 import Header from './components/header/Header';
 import GlobalStyle from './globalStyles';
 import Theme from './Theme';
-import Planets from './components/planets/Planets';
+import Mercury from './pages/Mercury';
+import PageWrapper from './components/pageWrapper/PageWrapper';
 
 function App() {
   return (
     <Theme>
       <GlobalStyle />
-      <Header />
-      <Planets />
+      <PageWrapper>
+        <Header />
+        <Mercury />
+      </PageWrapper>
     </Theme>
   );
 }
