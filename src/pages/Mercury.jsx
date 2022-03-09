@@ -15,8 +15,9 @@ const MercuryPlanet = styled(Planets)`
 `;
 
 const MercuryButtonOverview = styled(PlanetContentNavigation)`
+  background-color: ${({ theme }) => theme.colors.cerulean};
   &:hover {
-    background-color: ${({ theme }) => theme.colors.cerulean};
+    background-color: ${({ theme }) => theme.colors.darkGrey};
   }
 
   &::before {
@@ -25,9 +26,10 @@ const MercuryButtonOverview = styled(PlanetContentNavigation)`
     margin: 0 2rem 0 2rem;
   }
 `;
+
 const MercuryButtonInternal = styled(PlanetContentNavigation)`
   &:hover {
-    background-color: ${({ theme }) => theme.colors.cerulean};
+    background-color: ${({ theme }) => theme.colors.darkGrey};
   }
 
   &::before {
@@ -36,9 +38,10 @@ const MercuryButtonInternal = styled(PlanetContentNavigation)`
     margin: 0 2rem 0 2rem;
   }
 `;
+
 const MercuryButtonGeology = styled(PlanetContentNavigation)`
   &:hover {
-    background-color: ${({ theme }) => theme.colors.cerulean};
+    background-color: ${({ theme }) => theme.colors.darkGrey};
   }
 
   &::before {
@@ -54,9 +57,9 @@ const Mercury = () => {
   const [planetUrl, setPlanetUrl] = useState(null);
 
   useEffect(() => {
-    async function fetchData() {
+    async function fetchData(API) {
       try {
-        const response = await fetch(JSONData);
+        const response = await fetch(API);
         const data = await response.json();
         setContent(data[0].overview.content);
         setPlanetUrl(data[0].overview.source);
@@ -64,8 +67,13 @@ const Mercury = () => {
         console.log(err);
       }
     }
-    fetchData();
-  }, [content]);
+    fetchData(JSONData);
+  }, [JSONData]);
+
+  const structureContentHandler = () => {
+    setContent('test');
+    console.log('click');
+  };
 
   return (
     <MainSection>
@@ -75,12 +83,14 @@ const Mercury = () => {
         <PlanetContent>{content}</PlanetContent>
         <WikiLink
           url={`${planetUrl}`}
-          ariaLabel='Link to WIkipedia article for Mercury'
+          ariaLabel='Link to WIkipedia article for Mercury about the planet'
         />
       </PlanetContentContainer>
       <ContentNavigationContainer>
         <MercuryButtonOverview>Overview</MercuryButtonOverview>
-        <MercuryButtonInternal>Internal Structure</MercuryButtonInternal>
+        <MercuryButtonInternal structureContent={structureContentHandler}>
+          Internal Structure
+        </MercuryButtonInternal>
         <MercuryButtonGeology>Surface Geology</MercuryButtonGeology>
       </ContentNavigationContainer>
     </MainSection>

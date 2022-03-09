@@ -13,8 +13,12 @@ const Button = styled.button`
   text-align: left;
 `;
 
-const PlanetContentNavigation = ({ children, className }) => {
-  return <Button className={className}>{children}</Button>;
+const PlanetContentNavigation = ({ children, className, structureContent }) => {
+  return (
+    <Button onClick={structureContent} className={className}>
+      {children}
+    </Button>
+  );
 };
 
 export default PlanetContentNavigation;
