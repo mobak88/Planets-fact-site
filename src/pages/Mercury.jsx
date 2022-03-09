@@ -21,7 +21,7 @@ const MercuryButtonOverview = styled(PlanetContentNavigation)`
   }
 
   &::before {
-    color: ${({ theme }) => theme.colors.lightGrey};
+    color: ${({ theme }) => theme.colors.whiteTransparent};
     content: '01';
     margin: 0 2rem 0 2rem;
   }
@@ -33,7 +33,7 @@ const MercuryButtonInternal = styled(PlanetContentNavigation)`
   }
 
   &::before {
-    color: ${({ theme }) => theme.colors.lightGrey};
+    color: ${({ theme }) => theme.colors.whiteTransparent};
     content: '02';
     margin: 0 2rem 0 2rem;
   }
@@ -45,7 +45,7 @@ const MercuryButtonGeology = styled(PlanetContentNavigation)`
   }
 
   &::before {
-    color: ${({ theme }) => theme.colors.lightGrey};
+    color: ${({ theme }) => theme.colors.whiteTransparent};
     content: '03';
     margin: 0 2rem 0 2rem;
   }

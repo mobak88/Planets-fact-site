@@ -11,6 +11,7 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 1.2rem;
   text-align: left;
+  cursor: pointer;
 `;
 
 const PlanetContentNavigation = ({ children, className, structureContent }) => {

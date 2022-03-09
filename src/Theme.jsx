@@ -5,6 +5,7 @@ const theme = {
   colors: {
     bodyBackground: 'hsl(240, 67%, 8%)',
     white: 'hsl(0, 0%, 100%)',
+    whiteTransparent: 'rgba(255,255,255, 0.5)',
     darkGrey: '#38384F',
     lightGrey: '#838391',
     cerulean: '#419EBB',

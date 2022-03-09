@@ -7,12 +7,12 @@ const LinkContainer = styled.div`
 `;
 
 const Source = styled.p`
-  color: ${({ theme }) => theme.colors.lightGrey};
+  color: ${({ theme }) => theme.colors.whiteTransparent};
   font-size: 1.4rem;
 `;
 
 const Link = styled.a`
-  color: ${({ theme }) => theme.colors.lightGrey};
+  color: ${({ theme }) => theme.colors.whiteTransparent};
   font-weight: bold;
   cursor: pointer;
   margin-left: 0.2rem;
@@ -21,7 +21,6 @@ const Link = styled.a`
 
   &::after {
     content: url(${SourceIcon});
-    color: ${({ theme }) => theme.colors.lightGrey};
     margin-left: 0.7rem;
   }
 `;

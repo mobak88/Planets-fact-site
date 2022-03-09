@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2.2rem 4rem 2.1rem 3.2rem;
-  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.darkGrey};
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
 `;
 
 const Header = () => {
