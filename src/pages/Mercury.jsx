@@ -15,15 +15,8 @@ const MercuryPlanet = styled(Planets)`
 `;
 
 const MercuryButtonOverview = styled(PlanetContentNavigation)`
-  background-color: ${({ theme }) => theme.colors.cerulean};
   &:hover {
     background-color: ${({ theme }) => theme.colors.darkGrey};
-  }
-
-  &::before {
-    color: ${({ theme }) => theme.colors.whiteTransparent};
-    content: '01';
-    margin: 0 2rem 0 2rem;
   }
 `;
 
@@ -51,7 +44,7 @@ const MercuryButtonGeology = styled(PlanetContentNavigation)`
   }
 `;
 
-const Mercury = () => {
+const Mercury = ({ active }) => {
   const JSONData = '../../data.json';
   const [content, setContent] = useState(null);
   const [planetUrl, setPlanetUrl] = useState(null);
@@ -75,6 +68,10 @@ const Mercury = () => {
     console.log('click');
   };
 
+  const passProp = (data) => {
+    console.log(data);
+  };
+
   return (
     <MainSection>
       <MercuryPlanet></MercuryPlanet>
@@ -87,14 +84,27 @@ const Mercury = () => {
         />
       </PlanetContentContainer>
       <ContentNavigationContainer>
-        <MercuryButtonOverview>Overview</MercuryButtonOverview>
-        <MercuryButtonInternal structureContent={structureContentHandler}>
-          Internal Structure
-        </MercuryButtonInternal>
-        <MercuryButtonGeology>Surface Geology</MercuryButtonGeology>
+        <MercuryButtonOverview
+          structureContent={structureContentHandler}
+          passProp={passProp}
+        >
+          Overview
+        </MercuryButtonOverview>
       </ContentNavigationContainer>
     </MainSection>
   );
 };
 
 export default Mercury;
+
+/* const dataApi = await fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => response.json())
+  .then((data) => {
+    setState({
+      items: data,
+    });
+    return data;
+  })
+  .catch((error) => console.log(error));
+
+  console.log(dataApi); */
