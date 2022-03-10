@@ -15,6 +15,8 @@ const MercuryPlanet = styled(Planets)`
 `;
 
 const MercuryButtonOverview = styled(PlanetContentNavigation)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
   &:hover {
     background-color: ${({ theme }) => theme.colors.darkGrey};
   }
@@ -44,7 +46,14 @@ const MercuryButtonGeology = styled(PlanetContentNavigation)`
   }
 `;
 
-const Mercury = ({ active }) => {
+const Mercury = (
+  btnOverviewActive,
+  btnStructureActive,
+  btnGeologyActive,
+  btnOverviewActiveHandler,
+  btnStructureActiveHandler,
+  btnGeologyActiveHandler
+) => {
   const JSONData = '../../data.json';
   const [content, setContent] = useState(null);
   const [planetUrl, setPlanetUrl] = useState(null);
@@ -63,15 +72,6 @@ const Mercury = ({ active }) => {
     fetchData(JSONData);
   }, [JSONData]);
 
-  const structureContentHandler = () => {
-    setContent('test');
-    console.log('click');
-  };
-
-  const passProp = (data) => {
-    console.log(data);
-  };
-
   return (
     <MainSection>
       <MercuryPlanet></MercuryPlanet>
@@ -85,8 +85,12 @@ const Mercury = ({ active }) => {
       </PlanetContentContainer>
       <ContentNavigationContainer>
         <MercuryButtonOverview
-          structureContent={structureContentHandler}
-          passProp={passProp}
+          btnOverviewActive={btnOverviewActive}
+          btnStructureActive={btnStructureActive}
+          btnGeologyActive={btnGeologyActive}
+          btnOverviewActiveHandler={btnOverviewActiveHandler}
+          btnStructureActiveHandler={btnStructureActiveHandler}
+          btnGeologyActiveHandler={btnGeologyActiveHandler}
         >
           Overview
         </MercuryButtonOverview>
