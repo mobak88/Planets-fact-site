@@ -9,38 +9,15 @@ import PlanetContentNavigation from '../components/planetContentNavigation/Plane
 import ContentNavigationContainer from '../components/planetContentNavigation/ContentNavigationContainer';
 import WikiLink from '../components/wikiLink/WikiLink';
 import MercuryImg from '../../public/planet-mercury.svg';
+import APIData from '../../APIData';
 
 const MercuryPlanet = styled(Planets)`
   background-image: url(${MercuryImg});
 `;
 
-const MercuryButtonOverview = styled(PlanetContentNavigation)`
+const MercuryButton = styled(PlanetContentNavigation)`
   &:hover {
     background-color: ${({ theme }) => theme.colors.darkGrey};
-  }
-`;
-
-const MercuryButtonInternal = styled(PlanetContentNavigation)`
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.darkGrey};
-  }
-
-  &::before {
-    color: ${({ theme }) => theme.colors.whiteTransparent};
-    content: '02';
-    margin: 0 2rem 0 2rem;
-  }
-`;
-
-const MercuryButtonGeology = styled(PlanetContentNavigation)`
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.darkGrey};
-  }
-
-  &::before {
-    color: ${({ theme }) => theme.colors.whiteTransparent};
-    content: '03';
-    margin: 0 2rem 0 2rem;
   }
 `;
 
@@ -48,6 +25,27 @@ const Mercury = ({ active }) => {
   const JSONData = '../../data.json';
   const [content, setContent] = useState(null);
   const [planetUrl, setPlanetUrl] = useState(null);
+  const [btnOverviewActive, setBtnOverviewActive] = useState(false);
+  const [btnStructureActive, setBtnStructureActive] = useState(false);
+  const [btnGeologyActive, setBtnGeologyActive] = useState(false);
+
+  const btnOverviewActiveHandler = () => {
+    setBtnOverviewActive((active = true));
+    setBtnStructureActive((active = false));
+    setBtnGeologyActive((active = false));
+  };
+
+  const btnStructureActiveHandler = () => {
+    setBtnOverviewActive((active = false));
+    setBtnStructureActive((active = true));
+    setBtnGeologyActive((active = false));
+  };
+
+  const btnGeologyActiveHandler = () => {
+    setBtnOverviewActive((active = false));
+    setBtnStructureActive((active = false));
+    setBtnGeologyActive((active = true));
+  };
 
   useEffect(() => {
     async function fetchData(API) {
@@ -56,6 +54,7 @@ const Mercury = ({ active }) => {
         const data = await response.json();
         setContent(data[0].overview.content);
         setPlanetUrl(data[0].overview.source);
+        setBtnOverviewActive((active = true));
       } catch (err) {
         console.log(err);
       }
@@ -63,20 +62,11 @@ const Mercury = ({ active }) => {
     fetchData(JSONData);
   }, [JSONData]);
 
-  const structureContentHandler = () => {
-    setContent('test');
-    console.log('click');
-  };
-
-  const passProp = (data) => {
-    console.log(data);
-  };
-
   return (
     <MainSection>
       <MercuryPlanet></MercuryPlanet>
       <PlanetContentContainer>
-        <Heading>Mercury</Heading>
+        <Heading>{APIData[0].name}</Heading>
         <PlanetContent>{content}</PlanetContent>
         <WikiLink
           url={`${planetUrl}`}
@@ -84,27 +74,17 @@ const Mercury = ({ active }) => {
         />
       </PlanetContentContainer>
       <ContentNavigationContainer>
-        <MercuryButtonOverview
-          structureContent={structureContentHandler}
-          passProp={passProp}
-        >
-          Overview
-        </MercuryButtonOverview>
+        <MercuryButton
+          btnOverviewActiveHandler={btnOverviewActiveHandler}
+          btnStructureActiveHandler={btnStructureActiveHandler}
+          btnGeologyActiveHandler={btnGeologyActiveHandler}
+          btnOverviewActive={btnOverviewActive}
+          btnStructureActive={btnStructureActive}
+          btnGeologyActive={btnGeologyActive}
+        />
       </ContentNavigationContainer>
     </MainSection>
   );
 };
 
 export default Mercury;
-
-/* const dataApi = await fetch('https://jsonplaceholder.typicode.com/users')
-  .then((response) => response.json())
-  .then((data) => {
-    setState({
-      items: data,
-    });
-    return data;
-  })
-  .catch((error) => console.log(error));
-
-  console.log(dataApi); */

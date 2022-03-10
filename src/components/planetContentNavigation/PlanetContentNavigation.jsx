@@ -1,7 +1,4 @@
-import React, { useState } from 'react';
 import styled from 'styled-components';
-
-let before = 0;
 
 const Button = styled.button`
   text-transform: uppercase;
@@ -16,33 +13,66 @@ const Button = styled.button`
   text-align: left;
   cursor: pointer;
 
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.darkGrey};
+  }
+
   &::before {
     color: ${({ theme }) => theme.colors.whiteTransparent};
-    ${(props) => {
-      before = props.number + 1;
-      return 'content:' + before + ';';
-    }};
     margin: 0 2rem 0 2rem;
   }
 `;
 
-const PlanetContentNavigation = ({ className, structureContent, passProp }) => {
+const ButtonOverview = styled(Button)`
+  &::before {
+    content: '01';
+  }
+`;
+
+const ButtonInternal = styled(Button)`
+  &::before {
+    content: '02';
+  }
+`;
+
+const ButtonGeology = styled(Button)`
+  &::before {
+    content: '03';
+  }
+`;
+
+const PlanetContentNavigation = ({
+  className,
+  btnOverviewActive,
+  btnStructureActive,
+  btnGeologyActive,
+  btnOverviewActiveHandler,
+  btnStructureActiveHandler,
+  btnGeologyActiveHandler,
+}) => {
   return (
     <>
-      <Button
-        number={before}
-        active={false}
-        onClick={passProp}
+      <ButtonOverview
+        active={btnOverviewActive}
+        onClick={btnOverviewActiveHandler}
         className={className}
       >
         Overview
-      </Button>
-      <Button active={true} onClick={structureContent} className={className}>
+      </ButtonOverview>
+      <ButtonInternal
+        active={btnStructureActive}
+        onClick={btnStructureActiveHandler}
+        className={className}
+      >
         Internal Structure
-      </Button>
-      <Button onClick={structureContent} className={className}>
+      </ButtonInternal>
+      <ButtonGeology
+        active={btnGeologyActive}
+        onClick={btnGeologyActiveHandler}
+        className={className}
+      >
         Surface Geology
-      </Button>
+      </ButtonGeology>
     </>
   );
 };
