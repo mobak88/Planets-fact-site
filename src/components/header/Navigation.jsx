@@ -15,6 +15,51 @@ const HeaderLi = styled.li`
 const HeaderAnchor = styled(Link)`
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
+  padding-top: 2.859rem;
+  cursor: pointer;
+`;
+
+const MercuryAnchor = styled(HeaderAnchor)`
+  border-top: ${(props) => (props.active ? '4px solid geen' : 'none')};
+
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
+  }
+`;
+const VenusAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.tulipTree};
+  }
+`;
+const EarthAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.purple};
+  }
+`;
+const MarsAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.valencia};
+  }
+`;
+const JupiterAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.bloodMoon};
+  }
+`;
+const SaturnAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.rustyNail};
+  }
+`;
+const UranusAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.caribbeanGreen};
+  }
+`;
+const NeptuneAnchor = styled(HeaderAnchor)`
+  &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.blue};
+  }
 `;
 
 const Navigation = () => {
@@ -22,28 +67,28 @@ const Navigation = () => {
     <nav>
       <HeaderNavigation>
         <HeaderLi>
-          <HeaderAnchor to='/'>Mercury</HeaderAnchor>
+          <MercuryAnchor to='/'>Mercury</MercuryAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/venus'>Venus</HeaderAnchor>
+          <VenusAnchor to='/venus'>Venus</VenusAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/earth'>Earth</HeaderAnchor>
+          <EarthAnchor to='/earth'>Earth</EarthAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/mars'>Mars</HeaderAnchor>
+          <MarsAnchor to='/mars'>Mars</MarsAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/jupiter'>Jupiter</HeaderAnchor>
+          <JupiterAnchor to='/jupiter'>Jupiter</JupiterAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/saturn'>Saturn</HeaderAnchor>
+          <SaturnAnchor to='/saturn'>Saturn</SaturnAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/uranus'>Uranus</HeaderAnchor>
+          <UranusAnchor to='/uranus'>Uranus</UranusAnchor>
         </HeaderLi>
         <HeaderLi>
-          <HeaderAnchor to='/neptune'>Neptune</HeaderAnchor>
+          <NeptuneAnchor to='/neptune'>Neptune</NeptuneAnchor>
         </HeaderLi>
       </HeaderNavigation>
     </nav>
