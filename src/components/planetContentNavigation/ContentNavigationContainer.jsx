@@ -6,6 +6,7 @@ const ButtonsContainer = styled.div`
   flex-direction: column;
   gap: 1.6rem;
   width: 35rem;
+  justify-self: end;
 `;
 
 const ContentNavigationContainer = ({ children }) => {

@@ -6,10 +6,12 @@ const Planet = styled.div`
   height: 29rem;
   grid-row: 1 / span 2;
   margin-top: 12rem;
+  justify-self: end;
+  position: relative;
 `;
 
-const Planets = ({ children, className }) => {
+const PlanetContainer = ({ children, className }) => {
   return <Planet className={className}>{children}</Planet>;
 };
 
-export default Planets;
+export default PlanetContainer;

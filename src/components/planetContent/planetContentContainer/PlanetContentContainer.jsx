@@ -6,6 +6,7 @@ const ContentContainer = styled.div`
   flex-direction: column;
   width: 35rem;
   gap: 2.4rem;
+  justify-self: end;
 `;
 
 const PlanetContentContainer = ({ children }) => {
