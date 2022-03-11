@@ -12,9 +12,9 @@ import OverviewBtn from '../components/planetContentNavigation/OverviewBtn';
 import InternalStructureBtn from '../components/planetContentNavigation/InternalStructureBtn';
 import SurfaceGeologyBtn from '../components/planetContentNavigation/SurfaceGeologyBtn';
 import WikiLink from '../components/wikiLink/WikiLink';
-import MercuryImg from '../../public/planet-mercury.svg';
-import MercuryInternalImg from '../../public/planet-mercury-internal.svg';
-import MercuryGeoImg from '../../public/geology-mercury.png';
+import SaturnImg from '../../public/planet-saturn.svg';
+import SaturnInternalImg from '../../public/planet-saturn-internal.svg';
+import SaturnGeoImg from '../../public/geology-saturn.png';
 import PlanetFactsContainer from '../components/PlanetFactsCard/PlanetFactsContainer';
 import PlanetFactsCard from '../components/PlanetFactsCard/PlanetFactsCard';
 import {
@@ -27,34 +27,54 @@ import PlanetFact from '../components/PlanetFactsCard/PlanetFact';
 import Planet from '../components/planets/Planet';
 import PlanetGeology from '../components/planets/PlanetGeology';
 
-const MercuryOverviewBtn = styled(OverviewBtn)`
-  background-color: ${(props) =>
-    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+const SaturnContainer = styled(PlanetContainer)`
+  height: 58.2rem;
+  width: 58.2rem;
+  margin-top: -7rem;
 `;
 
-const MercuryInternalStructureBtn = styled(InternalStructureBtn)`
-  background-color: ${(props) =>
-    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+const SaturnPlanet = styled(Planet)`
+  height: 58.2rem;
+  width: 58.2rem;
 `;
 
-const MercurySurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
-  background-color: ${(props) =>
-    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+const SaturnGeology = styled(PlanetGeology)`
+  top: 35rem;
+  left: 20.9rem;
 `;
 
-const Mercury = () => {
+const SaturnOverviewBtn = styled(OverviewBtn)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.rustyNail : 'transparent'};
+`;
+
+const SaturnInternalStructureBtn = styled(InternalStructureBtn)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.rustyNail : 'transparent'};
+`;
+
+const SaturnSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.rustyNail : 'transparent'};
+`;
+
+const SaturnFactsContainer = styled(PlanetFactsContainer)`
+  margin: 2rem 0 10rem 0;
+`;
+
+const Saturn = () => {
   const [content, setContent] = useState(null);
   const [planetUrl, setPlanetUrl] = useState(null);
   const [btnOverviewActive, setBtnOverviewActive] = useState(false);
   const [btnStructureActive, setBtnStructureActive] = useState(false);
   const [btnGeologyActive, setBtnGeologyActive] = useState(false);
-  const [planetImg, setPlanetImg] = useState(MercuryImg);
+  const [planetImg, setPlanetImg] = useState(SaturnImg);
   const [visibleGeo, setVisibleGeo] = useState(false);
 
   useEffect(() => {
     function fetchData() {
-      setContent(APIData[0].overview.content);
-      setPlanetUrl(APIData[0].overview.source);
+      setContent(APIData[5].overview.content);
+      setPlanetUrl(APIData[5].overview.source);
       setBtnOverviewActive(true);
     }
     fetchData();
@@ -65,9 +85,9 @@ const Mercury = () => {
     setBtnStructureActive(false);
     setBtnGeologyActive(false);
 
-    setContent(APIData[0].overview.content);
-    setPlanetUrl(APIData[0].overview.source);
-    setPlanetImg(MercuryImg);
+    setContent(APIData[5].overview.content);
+    setPlanetUrl(APIData[5].overview.source);
+    setPlanetImg(SaturnImg);
     setVisibleGeo(false);
   };
 
@@ -76,9 +96,9 @@ const Mercury = () => {
     setBtnStructureActive(true);
     setBtnGeologyActive(false);
 
-    setContent(APIData[0].structure.content);
-    setPlanetUrl(APIData[0].structure.source);
-    setPlanetImg(MercuryInternalImg);
+    setContent(APIData[5].structure.content);
+    setPlanetUrl(APIData[5].structure.source);
+    setPlanetImg(SaturnInternalImg);
     setVisibleGeo(false);
   };
 
@@ -87,62 +107,62 @@ const Mercury = () => {
     setBtnStructureActive(false);
     setBtnGeologyActive(true);
 
-    setContent(APIData[0].geology.content);
-    setPlanetUrl(APIData[0].overview.source);
-    setPlanetImg(MercuryImg);
+    setContent(APIData[5].geology.content);
+    setPlanetUrl(APIData[5].overview.source);
+    setPlanetImg(SaturnImg);
     setVisibleGeo(true);
   };
 
   return (
     <MainWrapper>
       <MainSection>
-        <PlanetContainer>
-          <Planet src={planetImg} />
-          <PlanetGeology visibleGeo={visibleGeo} src={MercuryGeoImg} />
-        </PlanetContainer>
+        <SaturnContainer>
+          <SaturnPlanet src={planetImg} />
+          <SaturnGeology visibleGeo={visibleGeo} src={SaturnGeoImg} />
+        </SaturnContainer>
         <PlanetContentContainer>
-          <Heading>{APIData[0].name}</Heading>
+          <Heading>{APIData[5].name}</Heading>
           <PlanetContent>{content}</PlanetContent>
           <WikiLink
             url={`${planetUrl}`}
-            ariaLabel='Link to Wikipedia article for Mercury'
+            ariaLabel='Link to Wikipedia article for Saturn'
           />
         </PlanetContentContainer>
         <ContentNavigationContainer>
-          <MercuryOverviewBtn
+          <SaturnOverviewBtn
             btnOverviewActiveHandler={btnOverviewActiveHandler}
             active={btnOverviewActive}
           />
-          <MercuryInternalStructureBtn
+          <SaturnInternalStructureBtn
             btnStructureActiveHandler={btnStructureActiveHandler}
             active={btnStructureActive}
           />
-          <MercurySurfaceGeologyBtn
+          <SaturnSurfaceGeologyBtn
             btnGeologyActiveHandler={btnGeologyActiveHandler}
             active={btnGeologyActive}
           />
         </ContentNavigationContainer>
-        <PlanetFactsContainer>
+        <SaturnFactsContainer>
           <PlanetFactsCard>
             <PlanetFactsHeadingRotation />
-            <PlanetFact>{APIData[0].rotation}</PlanetFact>
+            <PlanetFact>{APIData[5].rotation}</PlanetFact>
           </PlanetFactsCard>
           <PlanetFactsCard>
             <PlanetFactsHeadingRevolution />
-            <PlanetFact>{APIData[0].revolution}</PlanetFact>
+            <PlanetFact>{APIData[5].revolution}</PlanetFact>
           </PlanetFactsCard>
           <PlanetFactsCard>
             <PlanetFactsHeadingRadius />
-            <PlanetFact>{APIData[0].radius}</PlanetFact>
+            <PlanetFact>{APIData[5].radius}</PlanetFact>
           </PlanetFactsCard>
           <PlanetFactsCard>
             <PlanetFactsHeadingTemp />
-            <PlanetFact>{APIData[0].temperature}</PlanetFact>
+            <PlanetFact>{APIData[5].temperature}</PlanetFact>
           </PlanetFactsCard>
-        </PlanetFactsContainer>
+        </SaturnFactsContainer>
       </MainSection>
     </MainWrapper>
   );
 };
 
-export default Mercury;
+export default Saturn;

@@ -10,8 +10,8 @@ const GeologyImg = styled.img`
   display: ${(props) => (props.visible ? 'block' : 'none')}; ;
 `;
 
-const PlanetGeology = ({ src, visibleGeo }) => {
-  return <GeologyImg visible={visibleGeo} src={src} />;
+const PlanetGeology = ({ className, src, visibleGeo }) => {
+  return <GeologyImg className={className} visible={visibleGeo} src={src} />;
 };
 
 export default PlanetGeology;

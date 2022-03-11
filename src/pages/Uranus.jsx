@@ -12,9 +12,9 @@ import OverviewBtn from '../components/planetContentNavigation/OverviewBtn';
 import InternalStructureBtn from '../components/planetContentNavigation/InternalStructureBtn';
 import SurfaceGeologyBtn from '../components/planetContentNavigation/SurfaceGeologyBtn';
 import WikiLink from '../components/wikiLink/WikiLink';
-import MercuryImg from '../../public/planet-mercury.svg';
-import MercuryInternalImg from '../../public/planet-mercury-internal.svg';
-import MercuryGeoImg from '../../public/geology-mercury.png';
+import UranusImg from '../../public/planet-uranus.svg';
+import UranusInternalImg from '../../public/planet-uranus-internal.svg';
+import UranusGeoImg from '../../public/geology-uranus.png';
 import PlanetFactsContainer from '../components/PlanetFactsCard/PlanetFactsContainer';
 import PlanetFactsCard from '../components/PlanetFactsCard/PlanetFactsCard';
 import {
@@ -27,34 +27,50 @@ import PlanetFact from '../components/PlanetFactsCard/PlanetFact';
 import Planet from '../components/planets/Planet';
 import PlanetGeology from '../components/planets/PlanetGeology';
 
-const MercuryOverviewBtn = styled(OverviewBtn)`
-  background-color: ${(props) =>
-    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+const UranusContainer = styled(PlanetContainer)`
+  height: 45.8rem;
+  width: 45.8rem;
+  margin-top: 0rem;
 `;
 
-const MercuryInternalStructureBtn = styled(InternalStructureBtn)`
-  background-color: ${(props) =>
-    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+const UranusPlanet = styled(Planet)`
+  height: 45.8rem;
+  width: 45.8rem;
 `;
 
-const MercurySurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
-  background-color: ${(props) =>
-    props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+const UranusGeology = styled(PlanetGeology)`
+  top: 31rem;
+  left: 14.8rem;
 `;
 
-const Mercury = () => {
+const UranusOverviewBtn = styled(OverviewBtn)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.caribbeanGreen : 'transparent'};
+`;
+
+const UranusInternalStructureBtn = styled(InternalStructureBtn)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.caribbeanGreen : 'transparent'};
+`;
+
+const UranusSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
+  background-color: ${(props) =>
+    props.active ? ({ theme }) => theme.colors.caribbeanGreen : 'transparent'};
+`;
+
+const Uranus = () => {
   const [content, setContent] = useState(null);
   const [planetUrl, setPlanetUrl] = useState(null);
   const [btnOverviewActive, setBtnOverviewActive] = useState(false);
   const [btnStructureActive, setBtnStructureActive] = useState(false);
   const [btnGeologyActive, setBtnGeologyActive] = useState(false);
-  const [planetImg, setPlanetImg] = useState(MercuryImg);
+  const [planetImg, setPlanetImg] = useState(UranusImg);
   const [visibleGeo, setVisibleGeo] = useState(false);
 
   useEffect(() => {
     function fetchData() {
-      setContent(APIData[0].overview.content);
-      setPlanetUrl(APIData[0].overview.source);
+      setContent(APIData[6].overview.content);
+      setPlanetUrl(APIData[6].overview.source);
       setBtnOverviewActive(true);
     }
     fetchData();
@@ -65,9 +81,9 @@ const Mercury = () => {
     setBtnStructureActive(false);
     setBtnGeologyActive(false);
 
-    setContent(APIData[0].overview.content);
-    setPlanetUrl(APIData[0].overview.source);
-    setPlanetImg(MercuryImg);
+    setContent(APIData[6].overview.content);
+    setPlanetUrl(APIData[6].overview.source);
+    setPlanetImg(UranusImg);
     setVisibleGeo(false);
   };
 
@@ -76,9 +92,9 @@ const Mercury = () => {
     setBtnStructureActive(true);
     setBtnGeologyActive(false);
 
-    setContent(APIData[0].structure.content);
-    setPlanetUrl(APIData[0].structure.source);
-    setPlanetImg(MercuryInternalImg);
+    setContent(APIData[6].structure.content);
+    setPlanetUrl(APIData[6].structure.source);
+    setPlanetImg(UranusInternalImg);
     setVisibleGeo(false);
   };
 
@@ -87,37 +103,37 @@ const Mercury = () => {
     setBtnStructureActive(false);
     setBtnGeologyActive(true);
 
-    setContent(APIData[0].geology.content);
-    setPlanetUrl(APIData[0].overview.source);
-    setPlanetImg(MercuryImg);
+    setContent(APIData[6].geology.content);
+    setPlanetUrl(APIData[6].overview.source);
+    setPlanetImg(UranusImg);
     setVisibleGeo(true);
   };
 
   return (
     <MainWrapper>
       <MainSection>
-        <PlanetContainer>
-          <Planet src={planetImg} />
-          <PlanetGeology visibleGeo={visibleGeo} src={MercuryGeoImg} />
-        </PlanetContainer>
+        <UranusContainer>
+          <UranusPlanet src={planetImg} />
+          <UranusGeology visibleGeo={visibleGeo} src={UranusGeoImg} />
+        </UranusContainer>
         <PlanetContentContainer>
-          <Heading>{APIData[0].name}</Heading>
+          <Heading>{APIData[6].name}</Heading>
           <PlanetContent>{content}</PlanetContent>
           <WikiLink
             url={`${planetUrl}`}
-            ariaLabel='Link to Wikipedia article for Mercury'
+            ariaLabel='Link to Wikipedia article for Uranus'
           />
         </PlanetContentContainer>
         <ContentNavigationContainer>
-          <MercuryOverviewBtn
+          <UranusOverviewBtn
             btnOverviewActiveHandler={btnOverviewActiveHandler}
             active={btnOverviewActive}
           />
-          <MercuryInternalStructureBtn
+          <UranusInternalStructureBtn
             btnStructureActiveHandler={btnStructureActiveHandler}
             active={btnStructureActive}
           />
-          <MercurySurfaceGeologyBtn
+          <UranusSurfaceGeologyBtn
             btnGeologyActiveHandler={btnGeologyActiveHandler}
             active={btnGeologyActive}
           />
@@ -125,19 +141,19 @@ const Mercury = () => {
         <PlanetFactsContainer>
           <PlanetFactsCard>
             <PlanetFactsHeadingRotation />
-            <PlanetFact>{APIData[0].rotation}</PlanetFact>
+            <PlanetFact>{APIData[6].rotation}</PlanetFact>
           </PlanetFactsCard>
           <PlanetFactsCard>
             <PlanetFactsHeadingRevolution />
-            <PlanetFact>{APIData[0].revolution}</PlanetFact>
+            <PlanetFact>{APIData[6].revolution}</PlanetFact>
           </PlanetFactsCard>
           <PlanetFactsCard>
             <PlanetFactsHeadingRadius />
-            <PlanetFact>{APIData[0].radius}</PlanetFact>
+            <PlanetFact>{APIData[6].radius}</PlanetFact>
           </PlanetFactsCard>
           <PlanetFactsCard>
             <PlanetFactsHeadingTemp />
-            <PlanetFact>{APIData[0].temperature}</PlanetFact>
+            <PlanetFact>{APIData[6].temperature}</PlanetFact>
           </PlanetFactsCard>
         </PlanetFactsContainer>
       </MainSection>
@@ -145,4 +161,4 @@ const Mercury = () => {
   );
 };
 
-export default Mercury;
+export default Uranus;

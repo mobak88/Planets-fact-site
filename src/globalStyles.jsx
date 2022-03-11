@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.5;
         font-family: 'Spartan', sans-serif;
         font-size: 1.6rem;
-        background-image: url('../public/background-stars.svg');
+        background-image: url('/background-stars.svg');
         background-color: ${({ theme }) => theme.colors.bodyBackground};
         display: flex;
         flex-direction: column;

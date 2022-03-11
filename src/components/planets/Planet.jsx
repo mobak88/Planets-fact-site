@@ -6,8 +6,8 @@ const PlanetImg = styled.img`
   height: 29rem;
 `;
 
-const Planet = ({ src }) => {
-  return <PlanetImg src={src} />;
+const Planet = ({ src, className }) => {
+  return <PlanetImg className={className} src={src} />;
 };
 
 export default Planet;
