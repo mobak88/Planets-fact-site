@@ -33,7 +33,6 @@ const MercurySurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
 `;
 
 const Mercury = () => {
-  const JSONData = '../../data.json';
   const [content, setContent] = useState(null);
   const [planetUrl, setPlanetUrl] = useState(null);
   const [btnOverviewActive, setBtnOverviewActive] = useState(false);
@@ -45,6 +44,7 @@ const Mercury = () => {
       setContent(APIData[0].overview.content);
       setPlanetUrl(APIData[0].overview.source);
       setBtnOverviewActive(true);
+      console.log(APIData[0]);
     }
     fetchData();
   }, [APIData]);
@@ -54,17 +54,8 @@ const Mercury = () => {
     setBtnStructureActive(false);
     setBtnGeologyActive(false);
 
-    async function fetchData(API) {
-      try {
-        const response = await fetch(API);
-        const data = await response.json();
-        setContent(data[0].overview.content);
-        setPlanetUrl(data[0].overview.source);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData(JSONData);
+    setContent(APIData[0].overview.content);
+    setPlanetUrl(APIData[0].overview.source);
   };
 
   const btnStructureActiveHandler = () => {
@@ -72,17 +63,8 @@ const Mercury = () => {
     setBtnStructureActive(true);
     setBtnGeologyActive(false);
 
-    async function fetchData(API) {
-      try {
-        const response = await fetch(API);
-        const data = await response.json();
-        setContent(data[0].structure.content);
-        setPlanetUrl(data[0].structure.source);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData(JSONData);
+    setContent(APIData[0].structure.content);
+    setPlanetUrl(APIData[0].structure.source);
   };
 
   const btnGeologyActiveHandler = () => {
@@ -90,17 +72,8 @@ const Mercury = () => {
     setBtnStructureActive(false);
     setBtnGeologyActive(true);
 
-    async function fetchData(API) {
-      try {
-        const response = await fetch(API);
-        const data = await response.json();
-        setContent(data[0].geology.content);
-        setPlanetUrl(data[0].geology.source);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData(JSONData);
+    setContent(APIData[0].geology.content);
+    setPlanetUrl(APIData[0].overview.source);
   };
 
   return (
