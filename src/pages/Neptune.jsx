@@ -46,16 +46,34 @@ const NeptuneGeology = styled(PlanetGeology)`
 const NeptuneOverviewBtn = styled(OverviewBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.blue : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.blue};
+    }
+  }
 `;
 
 const NeptuneInternalStructureBtn = styled(InternalStructureBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.blue : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.blue};
+    }
+  }
 `;
 
 const NeptuneSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.blue : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.blue};
+    }
+  }
 `;
 
 const Neptune = () => {

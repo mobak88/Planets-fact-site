@@ -1,14 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import SourceIcon from '../../../public/icon-source.svg';
+import fadeInAnimation from '../animations/Animations';
 
 const LinkContainer = styled.div`
   display: flex;
+  animation: ${fadeInAnimation}
+    ${({ theme }) => theme.transitionDuration.duration} ease-out;
+
+  @media screen and (max-width: 1165px) {
+    margin-top: 1.8rem;
+  }
 `;
 
 const Source = styled.p`
   color: ${({ theme }) => theme.colors.whiteTransparent};
   font-size: 1.4rem;
+
+  @media screen and (max-width: 1165px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Link = styled.a`
@@ -18,10 +29,16 @@ const Link = styled.a`
   margin-left: 0.2rem;
   font-size: 1.4rem;
   text-decoration: underline;
+  animation: ${fadeInAnimation}
+    ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   &::after {
     content: url(${SourceIcon});
     margin-left: 0.7rem;
+  }
+
+  @media screen and (max-width: 1165px) {
+    font-size: 1.2rem;
   }
 `;
 

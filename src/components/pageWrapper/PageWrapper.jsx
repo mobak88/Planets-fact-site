@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  width: ${({ theme }) => theme.screenSize.desktop};
-  height: 100vh;
+  max-width: ${({ theme }) => theme.screenSize.desktop};
 `;
 
 const PageWrapper = ({ children, className }) => {

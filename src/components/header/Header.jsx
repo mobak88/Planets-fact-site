@@ -10,7 +10,17 @@ const HeaderContainer = styled.div`
   padding: 0 4rem 0 3.2rem;
   height: 8.5rem;
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
-  width: 100%;
+  width: ${({ theme }) => theme.screenSize.desktop};
+
+  @media screen and (max-width: 1440px) {
+    width: 100vw;
+  }
+  @media screen and (max-width: 1165px) {
+    flex-direction: column;
+    height: 15.9rem;
+    justify-content: center;
+    gap: 0.3rem;
+  }
 `;
 
 const Header = () => {

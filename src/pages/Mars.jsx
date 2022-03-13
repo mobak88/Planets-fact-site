@@ -46,16 +46,34 @@ const MarsGeology = styled(PlanetGeology)`
 const MarsOverviewBtn = styled(OverviewBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.valencia : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.valencia};
+    }
+  }
 `;
 
 const MarsInternalStructureBtn = styled(InternalStructureBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.valencia : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.valencia};
+    }
+  }
 `;
 
 const MarsSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.valencia : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.valencia};
+    }
+  }
 `;
 
 const Mars = () => {

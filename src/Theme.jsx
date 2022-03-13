@@ -21,6 +21,10 @@ const theme = {
   screenSize: {
     desktop: '144rem',
   },
+
+  transitionDuration: {
+    duration: '1s',
+  },
 };
 
 const Theme = ({ children }) => (

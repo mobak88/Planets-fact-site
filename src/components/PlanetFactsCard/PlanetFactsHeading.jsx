@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const FactsHeading = styled.h4`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.whiteTransparent};
+
+  @media screen and (max-width: 1165px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const PlanetFactsHeadingRotation = () => {

@@ -30,16 +30,34 @@ import PlanetGeology from '../components/planets/PlanetGeology';
 const MercuryOverviewBtn = styled(OverviewBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.cerulean};
+    }
+  }
 `;
 
 const MercuryInternalStructureBtn = styled(InternalStructureBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.cerulean};
+    }
+  }
 `;
 
 const MercurySurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.cerulean : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.cerulean};
+    }
+  }
 `;
 
 const Mercury = () => {

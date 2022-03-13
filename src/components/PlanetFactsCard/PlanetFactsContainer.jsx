@@ -6,6 +6,11 @@ const Container = styled.div`
   grid-column: 1 / span 2;
   gap: 3rem;
   margin: 4.8rem 0 10rem 0;
+
+  @media screen and (max-width: 1165px) {
+    gap: 1.1rem;
+    margin-top: 2.7rem;
+  }
 `;
 
 const PlanetFatcsContainer = ({ className, children }) => {

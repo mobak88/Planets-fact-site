@@ -46,16 +46,34 @@ const UranusGeology = styled(PlanetGeology)`
 const UranusOverviewBtn = styled(OverviewBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.caribbeanGreen : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.caribbeanGreen};
+    }
+  }
 `;
 
 const UranusInternalStructureBtn = styled(InternalStructureBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.caribbeanGreen : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.caribbeanGreen};
+    }
+  }
 `;
 
 const UranusSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.caribbeanGreen : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.caribbeanGreen};
+    }
+  }
 `;
 
 const Uranus = () => {

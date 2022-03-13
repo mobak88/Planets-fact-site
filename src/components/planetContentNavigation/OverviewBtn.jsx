@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import fadeInAnimation from '../animations/Animations';
 
 const ButtonOverview = styled.button`
   text-transform: uppercase;
@@ -12,6 +13,8 @@ const ButtonOverview = styled.button`
   font-size: 1.2rem;
   text-align: left;
   cursor: pointer;
+  animation: ${fadeInAnimation}
+    ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.darkGrey};
@@ -21,6 +24,12 @@ const ButtonOverview = styled.button`
     color: ${({ theme }) => theme.colors.whiteTransparent};
     margin: 0 2rem 0 2rem;
     content: '01';
+  }
+
+  @media screen and (max-width: 1165px) {
+    width: 28rem;
+    font-size: 0.9rem;
+    height: 4rem;
   }
 `;
 

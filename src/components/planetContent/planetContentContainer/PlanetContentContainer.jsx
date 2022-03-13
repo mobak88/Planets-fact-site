@@ -7,6 +7,11 @@ const ContentContainer = styled.div`
   width: 35rem;
   gap: 2.4rem;
   justify-self: end;
+
+  @media screen and (max-width: 1165px) {
+    gap: 1.4rem;
+    justify-self: flex-start;
+  }
 `;
 
 const PlanetContentContainer = ({ children }) => {

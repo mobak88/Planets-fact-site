@@ -7,6 +7,11 @@ const ButtonsContainer = styled.div`
   gap: 1.6rem;
   width: 35rem;
   justify-self: end;
+
+  @media screen and (max-width: 1165px) {
+    width: 28rem;
+    margin-top: 5.6rem;
+  }
 `;
 
 const ContentNavigationContainer = ({ children }) => {

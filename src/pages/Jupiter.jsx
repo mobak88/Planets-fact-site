@@ -46,16 +46,34 @@ const JupiterGeology = styled(PlanetGeology)`
 const JupiterOverviewBtn = styled(OverviewBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.bloodMoon : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.bloodMoon};
+    }
+  }
 `;
 
 const JupiterInternalStructureBtn = styled(InternalStructureBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.bloodMoon : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.bloodMoon};
+    }
+  }
 `;
 
 const JupiterSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   background-color: ${(props) =>
     props.active ? ({ theme }) => theme.colors.bloodMoon : 'transparent'};
+
+  @media screen and (max-width: 1165px) {
+    &:hover {
+      background-color: ${({ theme }) => theme.colors.bloodMoon};
+    }
+  }
 `;
 
 const Jupiter = () => {

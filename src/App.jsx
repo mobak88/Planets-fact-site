@@ -16,8 +16,8 @@ function App() {
   return (
     <Theme>
       <GlobalStyle />
+      <Header />
       <PageWrapper>
-        <Header />
         <Routes>
           <Route path='/' element={<Mercury />} />
           <Route path='/venus' element={<Venus />} />
