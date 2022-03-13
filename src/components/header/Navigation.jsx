@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const HeaderNavigation = styled.ul`
   display: flex;
@@ -12,7 +12,7 @@ const HeaderLi = styled.li`
   color: ${({ theme }) => theme.colors.white};
 `;
 
-const HeaderAnchor = styled(Link)`
+const HeaderAnchor = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   padding-top: 2.859rem;
@@ -20,13 +20,19 @@ const HeaderAnchor = styled(Link)`
 `;
 
 const MercuryAnchor = styled(HeaderAnchor)`
-  border-top: ${(props) => (props.active ? '4px solid geen' : 'none')};
+  border-top: ${(props) =>
+    props.isActive ? ({ theme }) => theme.colors.blue + '4px solid' : 'none'};
 
   &:hover {
     border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
   }
 `;
 const VenusAnchor = styled(HeaderAnchor)`
+  border-top: ${(props) =>
+    props.isActive
+      ? ({ theme }) => theme.colors.tulipTree + '4px solid'
+      : 'none'};
+
   &:hover {
     border-top: 4px solid ${({ theme }) => theme.colors.tulipTree};
   }
@@ -67,10 +73,14 @@ const Navigation = () => {
     <nav>
       <HeaderNavigation>
         <HeaderLi>
-          <MercuryAnchor to='/'>Mercury</MercuryAnchor>
+          <MercuryAnchor className={(props) => props.isActive} to='/'>
+            Mercury
+          </MercuryAnchor>
         </HeaderLi>
         <HeaderLi>
-          <VenusAnchor to='/venus'>Venus</VenusAnchor>
+          <VenusAnchor className={(props) => props.isActive} to='/venus'>
+            Venus
+          </VenusAnchor>
         </HeaderLi>
         <HeaderLi>
           <EarthAnchor to='/earth'>Earth</EarthAnchor>

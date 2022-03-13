@@ -1,5 +1,5 @@
 import Header from './components/header/Header';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyles';
 import Theme from './Theme';
 import PageWrapper from './components/pageWrapper/PageWrapper';
@@ -17,19 +17,17 @@ function App() {
     <Theme>
       <GlobalStyle />
       <PageWrapper>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path='/' element={<Mercury />} />
-            <Route path='/venus' element={<Venus />} />
-            <Route path='/earth' element={<Earth />} />
-            <Route path='/mars' element={<Mars />} />
-            <Route path='/jupiter' element={<Jupiter />} />
-            <Route path='/saturn' element={<Saturn />} />
-            <Route path='/uranus' element={<Uranus />} />
-            <Route path='/neptune' element={<Neptune />} />
-          </Routes>
-        </Router>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Mercury />} />
+          <Route path='/venus' element={<Venus />} />
+          <Route path='/earth' element={<Earth />} />
+          <Route path='/mars' element={<Mars />} />
+          <Route path='/jupiter' element={<Jupiter />} />
+          <Route path='/saturn' element={<Saturn />} />
+          <Route path='/uranus' element={<Uranus />} />
+          <Route path='/neptune' element={<Neptune />} />
+        </Routes>
       </PageWrapper>
     </Theme>
   );
