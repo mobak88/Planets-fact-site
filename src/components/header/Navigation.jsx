@@ -13,7 +13,8 @@ const HeaderNavigation = styled.ul`
 
 const HeaderLi = styled.li`
   list-style: none;
-  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ active }) =>
+    active ? ({ theme }) => theme.colors.bloodMoon : 'none'};
 `;
 
 const HeaderAnchor = styled(NavLink)`
@@ -24,8 +25,8 @@ const HeaderAnchor = styled(NavLink)`
 `;
 
 const MercuryAnchor = styled(HeaderAnchor)`
-  border-top: ${({ isActive }) =>
-    isActive ? ({ theme }) => theme.colors.blue + '4px solid' : 'none'};
+  background-color: ${({ navactive }) =>
+    navactive ? ({ theme }) => theme.colors.blue : 'none'};
 
   &:hover {
     border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
@@ -130,19 +131,20 @@ const NeptuneAnchor = styled(HeaderAnchor)`
   }
 `;
 
-const Navigation = ({ isActive }) => {
+const Navigation = () => {
   return (
     <nav>
       <HeaderNavigation>
         <HeaderLi>
           <MercuryAnchor
-            className={(props) => (props.isActive ? isActive : '')}
+            // navactive
+            className={(navData) => (navData.isActive ? navActive : '')}
             to='/'
           >
             Mercury
           </MercuryAnchor>
         </HeaderLi>
-        <HeaderLi>
+        <HeaderLi active={true}>
           <VenusAnchor to='/venus'>Venus</VenusAnchor>
         </HeaderLi>
         <HeaderLi>

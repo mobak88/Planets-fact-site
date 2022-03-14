@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SourceIcon from '../../../public/icon-source.svg';
-import fadeInAnimation from '../animations/Animations';
+import { fadeInAnimation } from '../animations/Animations';
 
 const LinkContainer = styled.div`
   display: flex;

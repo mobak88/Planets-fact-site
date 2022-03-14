@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import fadeInAnimation from '../animations/Animations';
+import { fadeInAnimation } from '../animations/Animations';
 
 const FactsCard = styled.div`
   width: 25.5rem;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import fadeInAnimation from '../animations/Animations';
+import { fadeInAnimation } from '../animations/Animations';
 
 const PlanetImg = styled.img`
   width: 29rem;

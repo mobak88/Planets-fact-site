@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import fadeInAnimation from '../animations/Animations';
+import { fadeInAnimation } from '../animations/Animations';
 
 const ButtonOverview = styled.button`
   text-transform: uppercase;

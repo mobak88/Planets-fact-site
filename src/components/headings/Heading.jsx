@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import fadeInAnimation from '../animations/Animations';
+import { fadeInAnimation } from '../animations/Animations';
 
 const PlanetHeading = styled.h1`
   color: ${({ theme }) => theme.colors.white};
