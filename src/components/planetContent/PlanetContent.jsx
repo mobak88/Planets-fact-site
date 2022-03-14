@@ -13,8 +13,12 @@ const Content = styled.p`
   }
 `;
 
-const PlanetContent = ({ children, className }) => {
-  return <Content className={className}>{children}</Content>;
+const PlanetContent = ({ children, className, content }) => {
+  return (
+    <Content content={content} className={className}>
+      {children}
+    </Content>
+  );
 };
 
 export default PlanetContent;

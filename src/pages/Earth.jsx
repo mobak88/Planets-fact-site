@@ -136,7 +136,7 @@ const Earth = () => {
         </EarthContainer>
         <PlanetContentContainer>
           <Heading>{APIData[2].name}</Heading>
-          <PlanetContent>{content}</PlanetContent>
+          <PlanetContent content={content}>{content}</PlanetContent>
           <WikiLink
             url={`${planetUrl}`}
             ariaLabel='Link to Wikipedia article for Earth'

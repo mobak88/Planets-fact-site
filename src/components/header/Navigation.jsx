@@ -24,8 +24,8 @@ const HeaderAnchor = styled(NavLink)`
 `;
 
 const MercuryAnchor = styled(HeaderAnchor)`
-  border-top: ${({ active }) =>
-    active ? ({ theme }) => theme.colors.blue + '4px solid' : 'none'};
+  border-top: ${({ isActive }) =>
+    isActive ? ({ theme }) => theme.colors.blue + '4px solid' : 'none'};
 
   &:hover {
     border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
@@ -40,11 +40,6 @@ const MercuryAnchor = styled(HeaderAnchor)`
 `;
 
 const VenusAnchor = styled(HeaderAnchor)`
-  border-top: ${(props) =>
-    props.isActive
-      ? ({ theme }) => theme.colors.tulipTree + '4px solid'
-      : 'none'};
-
   &:hover {
     border-top: 4px solid ${({ theme }) => theme.colors.tulipTree};
   }
@@ -135,22 +130,20 @@ const NeptuneAnchor = styled(HeaderAnchor)`
   }
 `;
 
-const Navigation = ({ active }) => {
+const Navigation = ({ isActive }) => {
   return (
     <nav>
       <HeaderNavigation>
         <HeaderLi>
           <MercuryAnchor
-            className={(props) => (props.isActive ? active : '')}
+            className={(props) => (props.isActive ? isActive : '')}
             to='/'
           >
             Mercury
           </MercuryAnchor>
         </HeaderLi>
         <HeaderLi>
-          <VenusAnchor className={(props) => props.isActive} to='/venus'>
-            Venus
-          </VenusAnchor>
+          <VenusAnchor to='/venus'>Venus</VenusAnchor>
         </HeaderLi>
         <HeaderLi>
           <EarthAnchor to='/earth'>Earth</EarthAnchor>
