@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import '../../css/navLinks.css';
 
 const HeaderNavigation = styled.ul`
   display: flex;
@@ -25,9 +26,6 @@ const HeaderAnchor = styled(NavLink)`
 `;
 
 const MercuryAnchor = styled(HeaderAnchor)`
-  background-color: ${({ navactive }) =>
-    navactive ? ({ theme }) => theme.colors.blue : 'none'};
-
   &:hover {
     border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
   }
@@ -137,14 +135,13 @@ const Navigation = () => {
       <HeaderNavigation>
         <HeaderLi>
           <MercuryAnchor
-            // navactive
-            className={(navData) => (navData.isActive ? navActive : '')}
+            className={(navData) => (navData.isActive ? 'active' : '')}
             to='/'
           >
             Mercury
           </MercuryAnchor>
         </HeaderLi>
-        <HeaderLi active={true}>
+        <HeaderLi>
           <VenusAnchor to='/venus'>Venus</VenusAnchor>
         </HeaderLi>
         <HeaderLi>

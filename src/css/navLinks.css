@@ -1,0 +1,9 @@
+.active {
+  border-top: 4px solid #fff;
+}
+
+@media screen and (max-width: 1165px) {
+  .active {
+    border-top: none;
+  }
+}
