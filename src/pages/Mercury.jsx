@@ -61,22 +61,13 @@ const MercurySurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
 `;
 
 const Mercury = () => {
-  const [content, setContent] = useState(null);
-  const [planetUrl, setPlanetUrl] = useState(null);
-  const [btnOverviewActive, setBtnOverviewActive] = useState(false);
+  const [content, setContent] = useState(APIData[0].overview.content);
+  const [planetUrl, setPlanetUrl] = useState(APIData[0].overview.source);
+  const [btnOverviewActive, setBtnOverviewActive] = useState(true);
   const [btnStructureActive, setBtnStructureActive] = useState(false);
   const [btnGeologyActive, setBtnGeologyActive] = useState(false);
   const [planetImg, setPlanetImg] = useState(MercuryImg);
   const [visibleGeo, setVisibleGeo] = useState(false);
-
-  useEffect(() => {
-    function fetchData() {
-      setContent(APIData[0].overview.content);
-      setPlanetUrl(APIData[0].overview.source);
-      setBtnOverviewActive(true);
-    }
-    fetchData();
-  }, [APIData]);
 
   const btnOverviewActiveHandler = () => {
     setBtnOverviewActive(true);

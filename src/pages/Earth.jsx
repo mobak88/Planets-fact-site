@@ -77,22 +77,13 @@ const EarthSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
 `;
 
 const Earth = () => {
-  const [content, setContent] = useState(null);
-  const [planetUrl, setPlanetUrl] = useState(null);
-  const [btnOverviewActive, setBtnOverviewActive] = useState(false);
+  const [content, setContent] = useState(APIData[2].overview.content);
+  const [planetUrl, setPlanetUrl] = useState(APIData[2].overview.source);
+  const [btnOverviewActive, setBtnOverviewActive] = useState(true);
   const [btnStructureActive, setBtnStructureActive] = useState(false);
   const [btnGeologyActive, setBtnGeologyActive] = useState(false);
   const [planetImg, setPlanetImg] = useState(EarthImg);
   const [visibleGeo, setVisibleGeo] = useState(false);
-
-  useEffect(() => {
-    function fetchData() {
-      setContent(APIData[2].overview.content);
-      setPlanetUrl(APIData[2].overview.source);
-      setBtnOverviewActive(true);
-    }
-    fetchData();
-  }, [APIData]);
 
   const btnOverviewActiveHandler = () => {
     setBtnOverviewActive(true);

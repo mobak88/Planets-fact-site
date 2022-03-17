@@ -23,7 +23,8 @@ const theme = {
   },
 
   transitionDuration: {
-    duration: '1s',
+    duration: '.8s',
+    slideInToLeftDuration: '.6s',
   },
 };
 

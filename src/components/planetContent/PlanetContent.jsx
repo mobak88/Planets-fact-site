@@ -1,23 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CSSTransition } from 'react-transition-group';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
+import { fadeInAnimationRightToLeft } from '../animations/Animations';
+
+const ContentWrapper = styled.div`
+  animation: ${fadeInAnimationRightToLeft}
+    ${({ theme }) => theme.transitionDuration.duration} ease-out;
+`;
 
 const Content = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1.4rem;
-
-  &.fadeInAnimation-appear {
-    opacity: 0;
-    transform: translateX(20%);
-  }
-
-  &.fadeInAnimation-appear-active {
-    opacity: 1;
-    transform: translateX(0%);
-    transition: transform ${({ theme }) => theme.transitionDuration.duration}
-        linear,
-      opacity ${({ theme }) => theme.transitionDuration.duration} linear;
-  }
 
   &.fadeInAnimation-enter {
     opacity: 0;
@@ -25,30 +18,18 @@ const Content = styled.p`
 
   &.fadeInAnimation-enter-active {
     opacity: 1;
-    transition: opacity ${({ theme }) => theme.transitionDuration.duration}
-      linear;
+    transition: opacity
+      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
   }
 
-  &.fadeInAnimation-enter-done {
-    opacity: 1;
-    transition: opacity ${({ theme }) => theme.transitionDuration.duration}
-      linear;
-  }
-
-  &.fadeInAnimation-leave {
+  &.fadeInAnimation-exit {
     opacity: 1;
   }
 
-  &.fadeInAnimation-leave-active {
+  &.fadeInAnimation-exit-active {
     opacity: 0;
-    transition: opacity ${({ theme }) => theme.transitionDuration.duration}
-      linear;
-  }
-
-  &.fadeInAnimation-leave-done {
-    opacity: 0;
-    transition: opacity ${({ theme }) => theme.transitionDuration.duration}
-      linear;
+    transition: opacity
+      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
   }
 
   @media screen and (max-width: 1165px) {
@@ -57,19 +38,24 @@ const Content = styled.p`
 `;
 
 const PlanetContent = ({ children, className, content }) => {
-  const nodeRef = React.useRef(null);
   return (
-    <CSSTransition
-      nodeRef={nodeRef}
-      in={true}
-      appear={true}
-      classNames='fadeInAnimation'
-      timeout={1000}
-    >
-      <Content ref={nodeRef} content={content} className={className}>
-        {children}
-      </Content>
-    </CSSTransition>
+    <ContentWrapper>
+      <SwitchTransition mode='out-in'>
+        <CSSTransition
+          in={false}
+          appear={false}
+          classNames='fadeInAnimation'
+          addEndListener={(node, done) => {
+            node.addEventListener('transitionend', done, false);
+          }}
+          key={Math.random() * 100}
+        >
+          <Content content={content} className={className}>
+            {children}
+          </Content>
+        </CSSTransition>
+      </SwitchTransition>
+    </ContentWrapper>
   );
 };
 

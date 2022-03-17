@@ -77,22 +77,13 @@ const NeptuneSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
 `;
 
 const Neptune = () => {
-  const [content, setContent] = useState(null);
-  const [planetUrl, setPlanetUrl] = useState(null);
-  const [btnOverviewActive, setBtnOverviewActive] = useState(false);
+  const [content, setContent] = useState(APIData[7].overview.content);
+  const [planetUrl, setPlanetUrl] = useState(APIData[7].overview.source);
+  const [btnOverviewActive, setBtnOverviewActive] = useState(true);
   const [btnStructureActive, setBtnStructureActive] = useState(false);
   const [btnGeologyActive, setBtnGeologyActive] = useState(false);
   const [planetImg, setPlanetImg] = useState(NeptuneImg);
   const [visibleGeo, setVisibleGeo] = useState(false);
-
-  useEffect(() => {
-    function fetchData() {
-      setContent(APIData[7].overview.content);
-      setPlanetUrl(APIData[7].overview.source);
-      setBtnOverviewActive(true);
-    }
-    fetchData();
-  }, [APIData]);
 
   const btnOverviewActiveHandler = () => {
     setBtnOverviewActive(true);
