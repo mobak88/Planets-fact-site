@@ -42,8 +42,6 @@ const PlanetContent = ({ children, className, content }) => {
     <ContentWrapper>
       <SwitchTransition mode='out-in'>
         <CSSTransition
-          in={false}
-          appear={false}
           classNames='fadeInAnimation'
           addEndListener={(node, done) => {
             node.addEventListener('transitionend', done, false);
