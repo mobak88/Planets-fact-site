@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import '../../css/navLinks.css';
 
 const HeaderNavigation = styled.ul`
   display: flex;
@@ -23,10 +22,20 @@ const HeaderAnchor = styled(NavLink)`
   text-decoration: none;
   padding-top: 2.859rem;
   cursor: pointer;
+
+  @media screen and (max-width: 1165px) {
+    &.active {
+      border-top: none;
+    }
+  }
 `;
 
 const MercuryAnchor = styled(HeaderAnchor)`
   &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
+  }
+
+  &.active {
     border-top: 4px solid ${({ theme }) => theme.colors.cerulean};
   }
 
@@ -43,6 +52,10 @@ const VenusAnchor = styled(HeaderAnchor)`
     border-top: 4px solid ${({ theme }) => theme.colors.tulipTree};
   }
 
+  &.active {
+    border-top: 4px solid ${({ theme }) => theme.colors.tulipTree};
+  }
+
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
@@ -53,6 +66,10 @@ const VenusAnchor = styled(HeaderAnchor)`
 
 const EarthAnchor = styled(HeaderAnchor)`
   &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.purple};
+  }
+
+  &.active {
     border-top: 4px solid ${({ theme }) => theme.colors.purple};
   }
 
@@ -69,6 +86,10 @@ const MarsAnchor = styled(HeaderAnchor)`
     border-top: 4px solid ${({ theme }) => theme.colors.valencia};
   }
 
+  &.active {
+    border-top: 4px solid ${({ theme }) => theme.colors.valencia};
+  }
+
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
@@ -79,6 +100,10 @@ const MarsAnchor = styled(HeaderAnchor)`
 
 const JupiterAnchor = styled(HeaderAnchor)`
   &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.bloodMoon};
+  }
+
+  &.active {
     border-top: 4px solid ${({ theme }) => theme.colors.bloodMoon};
   }
 
@@ -95,6 +120,10 @@ const SaturnAnchor = styled(HeaderAnchor)`
     border-top: 4px solid ${({ theme }) => theme.colors.rustyNail};
   }
 
+  &.active {
+    border-top: 4px solid ${({ theme }) => theme.colors.rustyNail};
+  }
+
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
@@ -108,6 +137,10 @@ const UranusAnchor = styled(HeaderAnchor)`
     border-top: 4px solid ${({ theme }) => theme.colors.caribbeanGreen};
   }
 
+  &.active {
+    border-top: 4px solid ${({ theme }) => theme.colors.caribbeanGreen};
+  }
+
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
@@ -118,6 +151,10 @@ const UranusAnchor = styled(HeaderAnchor)`
 
 const NeptuneAnchor = styled(HeaderAnchor)`
   &:hover {
+    border-top: 4px solid ${({ theme }) => theme.colors.blue};
+  }
+
+  &.active {
     border-top: 4px solid ${({ theme }) => theme.colors.blue};
   }
 

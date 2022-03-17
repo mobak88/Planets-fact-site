@@ -5,7 +5,8 @@ import { fadeInAnimationRightToLeft } from '../animations/Animations';
 const Content = styled.p`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1.4rem;
-  animation: ${fadeInAnimationRightToLeft} 0.4s linear;
+  animation: ${fadeInAnimationRightToLeft}
+    ${({ theme }) => theme.transitionDuration.duration} linear;
 
   @media screen and (max-width: 1165px) {
     font-size: 1.1rem;

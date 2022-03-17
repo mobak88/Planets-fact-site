@@ -5,8 +5,6 @@ import { fadeInAnimation } from '../animations/Animations';
 
 const LinkContainer = styled.div`
   display: flex;
-  animation: ${fadeInAnimation}
-    ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   @media screen and (max-width: 1165px) {
     margin-top: 1.8rem;
@@ -16,6 +14,8 @@ const LinkContainer = styled.div`
 const Source = styled.p`
   color: ${({ theme }) => theme.colors.whiteTransparent};
   font-size: 1.4rem;
+  animation: ${fadeInAnimation}
+    ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   @media screen and (max-width: 1165px) {
     font-size: 1.2rem;
