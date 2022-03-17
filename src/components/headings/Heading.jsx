@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { fadeInAnimation } from '../animations/Animations';
+import { fadeInAnimationBottomToTop } from '../animations/Animations';
 
 const PlanetHeading = styled.h1`
   color: ${({ theme }) => theme.colors.white};
-  animation: ${fadeInAnimation}
+  animation: ${fadeInAnimationBottomToTop}
     ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   @media screen and (max-width: 1165px) {

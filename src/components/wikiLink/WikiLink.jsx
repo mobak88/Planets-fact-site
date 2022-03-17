@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SourceIcon from '../../../public/icon-source.svg';
-import { fadeInAnimation } from '../animations/Animations';
+import { fadeInAnimationBottomToTop } from '../animations/Animations';
 
 const LinkContainer = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const LinkContainer = styled.div`
 const Source = styled.p`
   color: ${({ theme }) => theme.colors.whiteTransparent};
   font-size: 1.4rem;
-  animation: ${fadeInAnimation}
+  animation: ${fadeInAnimationBottomToTop}
     ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   @media screen and (max-width: 1165px) {
@@ -29,7 +29,7 @@ const Link = styled.a`
   margin-left: 0.2rem;
   font-size: 1.4rem;
   text-decoration: underline;
-  animation: ${fadeInAnimation}
+  animation: ${fadeInAnimationBottomToTop}
     ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   &::after {

@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  fadeInAnimation,
-  fadeInAnimationTopToBottom,
-} from '../animations/Animations';
+import { fadeInAnimationTopToBottom } from '../animations/Animations';
 
 const PlanetImg = styled.img`
   width: 29rem;

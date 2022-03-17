@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { fadeInAnimation } from '../animations/Animations';
+import { fadeInAnimationBottomToTop } from '../animations/Animations';
 
 const ButtonGeology = styled.button`
   text-transform: uppercase;
@@ -13,7 +13,7 @@ const ButtonGeology = styled.button`
   font-size: 1.2rem;
   text-align: left;
   cursor: pointer;
-  animation: ${fadeInAnimation}
+  animation: ${fadeInAnimationBottomToTop}
     ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   &:hover {
