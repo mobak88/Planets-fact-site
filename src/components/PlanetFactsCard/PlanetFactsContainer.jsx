@@ -11,6 +11,14 @@ const Container = styled.div`
     gap: 1.1rem;
     margin-top: 2.7rem;
   }
+
+  @media screen and (max-width: 720px) {
+    grid-column: 1 / span 1;
+    flex-direction: column;
+    justify-self: center;
+    width: 90%;
+    grid-area: facts;
+  }
 `;
 
 const PlanetFatcsContainer = ({ className, children }) => {

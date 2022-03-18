@@ -8,6 +8,11 @@ const Fact = styled.h2`
     font-size: 2.4rem;
     line-height: 3.6rem;
   }
+
+  @media screen and (max-width: 720px) {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 `;
 
 const PlanetFact = ({ children }) => {

@@ -12,6 +12,20 @@ const ButtonsContainer = styled.div`
     width: 28rem;
     margin-top: 5.6rem;
   }
+
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    height: 5rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+    gap: 0;
+    grid-area: contentNav;
+    margin-top: 0;
+    flex-direction: row;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2.4rem;
+  }
 `;
 
 const ContentNavigationContainer = ({ children }) => {

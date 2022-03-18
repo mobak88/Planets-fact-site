@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   max-width: ${({ theme }) => theme.screenSize.desktop};
+  position: relative;
 `;
 
 const PageWrapper = ({ children, className }) => {

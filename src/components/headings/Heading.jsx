@@ -11,6 +11,11 @@ const PlanetHeading = styled.h1`
     font-size: 4.8rem;
     line-height: 7.2rem;
   }
+
+  @media screen and (max-width: 720px) {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
 `;
 
 const Heading = ({ children, className }) => {

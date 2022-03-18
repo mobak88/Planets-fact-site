@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
 import Navigation from './Navigation';
+import { HamburgerButton } from './MobileNavigation';
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -21,6 +22,13 @@ const HeaderContainer = styled.div`
     justify-content: center;
     gap: 0.3rem;
   }
+
+  @media screen and (max-width: 720px) {
+    flex-direction: row;
+    height: 6.8rem;
+    justify-content: space-between;
+    padding: 0 2.4rem 0 2.4rem;
+  }
 `;
 
 const Header = () => {
@@ -28,6 +36,7 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
       <Navigation />
+      <HamburgerButton />
     </HeaderContainer>
   );
 };

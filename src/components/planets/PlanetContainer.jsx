@@ -38,6 +38,12 @@ const Planet = styled.div`
     justify-self: center;
     margin: 3rem 0 13rem 0;
   }
+
+  @media screen and (max-width: 720px) {
+    grid-column: 1 / span 1;
+    justify-self: center;
+    grid-area: planet;
+  }
 `;
 
 const PlanetContainer = ({ children, className }) => {

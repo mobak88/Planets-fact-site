@@ -31,6 +31,16 @@ const ButtonGeology = styled.button`
     font-size: 0.9rem;
     height: 4rem;
   }
+
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    border: none;
+    text-align: end;
+
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 const SurfaceGeologyBtn = ({ className, btnGeologyActiveHandler, active }) => {

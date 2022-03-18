@@ -11,6 +11,7 @@ import Jupiter from './pages/Jupiter';
 import Saturn from './pages/Saturn';
 import Uranus from './pages/Uranus';
 import Neptune from './pages/Neptune';
+import { MobileNavigation } from './components/header/MobileNavigation';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <PageWrapper>
+        <MobileNavigation />
         <Routes>
           <Route path='/' element={<Mercury />} />
           <Route path='/venus' element={<Venus />} />

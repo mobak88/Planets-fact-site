@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+const StyledNav = styled.nav`
+  @media screen and (max-width: 720px) {
+    display: none;
+  }
+`;
+
 const HeaderNavigation = styled.ul`
   display: flex;
   gap: 3.3rem;
@@ -42,6 +48,10 @@ const MercuryAnchor = styled(HeaderAnchor)`
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
+    }
+
+    &.active {
+      border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.cerulean};
     }
   }
@@ -58,6 +68,10 @@ const VenusAnchor = styled(HeaderAnchor)`
 
   @media screen and (max-width: 1165px) {
     &:hover {
+      border-top: none;
+    }
+
+    &.active {
       border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.tulipTree};
     }
@@ -76,6 +90,10 @@ const EarthAnchor = styled(HeaderAnchor)`
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
+    }
+
+    &.active {
+      border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.purple};
     }
   }
@@ -92,6 +110,10 @@ const MarsAnchor = styled(HeaderAnchor)`
 
   @media screen and (max-width: 1165px) {
     &:hover {
+      border-top: none;
+    }
+
+    &.active {
       border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.valencia};
     }
@@ -110,6 +132,10 @@ const JupiterAnchor = styled(HeaderAnchor)`
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
+    }
+
+    &.active {
+      border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.bloodMoon};
     }
   }
@@ -126,6 +152,10 @@ const SaturnAnchor = styled(HeaderAnchor)`
 
   @media screen and (max-width: 1165px) {
     &:hover {
+      border-top: none;
+    }
+
+    &.active {
       border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.rustyNail};
     }
@@ -144,6 +174,10 @@ const UranusAnchor = styled(HeaderAnchor)`
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
+    }
+
+    &.active {
+      border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.caribbeanGreen};
     }
   }
@@ -161,6 +195,10 @@ const NeptuneAnchor = styled(HeaderAnchor)`
   @media screen and (max-width: 1165px) {
     &:hover {
       border-top: none;
+    }
+
+    &.active {
+      border-top: none;
       border-bottom: 4px solid ${({ theme }) => theme.colors.blue};
     }
   }
@@ -168,7 +206,7 @@ const NeptuneAnchor = styled(HeaderAnchor)`
 
 const Navigation = () => {
   return (
-    <nav>
+    <StyledNav>
       <HeaderNavigation>
         <HeaderLi>
           <MercuryAnchor
@@ -200,7 +238,7 @@ const Navigation = () => {
           <NeptuneAnchor to='/neptune'>Neptune</NeptuneAnchor>
         </HeaderLi>
       </HeaderNavigation>
-    </nav>
+    </StyledNav>
   );
 };
 

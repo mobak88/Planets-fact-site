@@ -12,6 +12,14 @@ const ContentContainer = styled.div`
     gap: 1.4rem;
     justify-self: flex-start;
   }
+
+  @media screen and (max-width: 720px) {
+    justify-self: center;
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    grid-area: wikipediaContent;
+  }
 `;
 
 const PlanetContentContainer = ({ children }) => {

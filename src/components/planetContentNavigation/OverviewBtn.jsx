@@ -31,6 +31,15 @@ const ButtonOverview = styled.button`
     font-size: 0.9rem;
     height: 4rem;
   }
+
+  @media screen and (max-width: 720px) {
+    width: 100%;
+    border: none;
+
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 const OverviewBtn = ({ className, btnOverviewActiveHandler, active }) => {
