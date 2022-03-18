@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Chevron from '/icon-chevron.svg';
@@ -10,6 +10,11 @@ const StyledHamburgerButton = styled.button`
   gap: 0.4rem;
   background-color: transparent;
   border: none;
+  display: none;
+
+  @media screen and (max-width: 720px) {
+    display: flex;
+  }
 `;
 
 const BurgerButtonBar = styled.span`
@@ -28,6 +33,7 @@ const MobileMenuContainer = styled.div`
   padding: 2.4rem 2.4rem 6.7rem 2.4rem;
   display: flex;
   flex-direction: column;
+  display: ${({ active }) => (active ? 'block' : 'none')};
 `;
 
 const MobileNav = styled.nav``;
@@ -40,6 +46,10 @@ const MobileLi = styled.li`
   list-style: none;
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
   padding: 2rem 0;
+`;
+
+const NeptuneLi = styled(MobileLi)`
+  border-bottom: none;
 `;
 
 const MobileAnchor = styled(NavLink)`
@@ -63,7 +73,7 @@ const MobileAnchor = styled(NavLink)`
   }
 
   &::after {
-    margin-left: auto;
+    margin: 0 1.1rem 0 auto;
     content: url(${Chevron});
     width: 0.3rem;
     height: 0.3rem;
@@ -111,9 +121,9 @@ const MobileNavNeptune = styled(MobileAnchor)`
   }
 `;
 
-export const MobileNavigation = () => {
+export const MobileNavigation = ({ burgerMenu }) => {
   return (
-    <MobileMenuContainer>
+    <MobileMenuContainer active={burgerMenu}>
       <MobileNav>
         <MobileUl>
           <MobileLi>
@@ -137,9 +147,9 @@ export const MobileNavigation = () => {
           <MobileLi>
             <MobileNavUranus to='/uranus'>Uranus</MobileNavUranus>
           </MobileLi>
-          <MobileLi>
+          <NeptuneLi>
             <MobileNavNeptune to='/neptune'>Neptune</MobileNavNeptune>
-          </MobileLi>
+          </NeptuneLi>
         </MobileUl>
       </MobileNav>
     </MobileMenuContainer>
@@ -147,8 +157,15 @@ export const MobileNavigation = () => {
 };
 
 export const HamburgerButton = () => {
+  const [burgerMenu, setBurgerMenu] = useState(false);
+
+  const burgerMenuHandler = () => {
+    setBurgerMenu((toggleBool) => !toggleBool);
+    console.log(burgerMenu);
+  };
+
   return (
-    <StyledHamburgerButton>
+    <StyledHamburgerButton burgerMenu={burgerMenu} onClick={burgerMenuHandler}>
       <BurgerButtonBar />
       <BurgerButtonBar />
       <BurgerButtonBar />
