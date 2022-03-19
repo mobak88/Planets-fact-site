@@ -6,6 +6,7 @@ const PlanetHeading = styled.h1`
   color: ${({ theme }) => theme.colors.white};
   animation: ${fadeInAnimationBottomToTop}
     ${({ theme }) => theme.transitionDuration.duration} ease-out;
+  text-transform: uppercase;
 
   @media screen and (max-width: 1165px) {
     font-size: 4.8rem;
