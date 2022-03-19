@@ -47,8 +47,8 @@ const SurfaceGeologyBtn = ({ className, btnGeologyActiveHandler, active }) => {
 
   useEffect(() => {
     mobileWindow.matches
-      ? setButtonText('Internal')
-      : setButtonText('Internal Structure');
+      ? setButtonText('Surface')
+      : setButtonText('Surface Geology');
   }, [buttonText]);
 
   return (
