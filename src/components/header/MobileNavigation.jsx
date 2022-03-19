@@ -146,13 +146,13 @@ export const MobileNavigation = ({ mobileMenuHandler }) => {
       <MobileNav>
         <MobileUl>
           <MobileLi onClick={mobileMenuHandler}>
-            <MobileNavMercury to='/'>Mercury</MobileNavMercury>
+            <MobileNavMercury to='/mercury'>Mercury</MobileNavMercury>
           </MobileLi>
           <MobileLi onClick={mobileMenuHandler}>
             <MobileNavVenus to='/venus'>Venus</MobileNavVenus>
           </MobileLi>
           <MobileLi onClick={mobileMenuHandler}>
-            <MobileNavEarth to='/earth'>Earth</MobileNavEarth>
+            <MobileNavEarth to='/'>Earth</MobileNavEarth>
           </MobileLi>
           <MobileLi onClick={mobileMenuHandler}>
             <MobileNavMars to='/mars'>Mars</MobileNavMars>

@@ -37,9 +37,9 @@ function App() {
           <MobileNavigation mobileMenuHandler={mobileMenuHandler} />
         </CSSTransition>
         <Routes>
-          <Route path='/' element={<Mercury />} />
+          <Route path='/mercury' element={<Mercury />} />
           <Route path='/venus' element={<Venus />} />
-          <Route path='/earth' element={<Earth />} />
+          <Route path='/' element={<Earth />} />
           <Route path='/mars' element={<Mars />} />
           <Route path='/jupiter' element={<Jupiter />} />
           <Route path='/saturn' element={<Saturn />} />

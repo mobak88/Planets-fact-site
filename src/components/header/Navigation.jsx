@@ -209,18 +209,18 @@ const Navigation = () => {
     <StyledNav>
       <HeaderNavigation>
         <HeaderLi>
-          <MercuryAnchor
-            className={(navData) => (navData.isActive ? 'active' : '')}
-            to='/'
-          >
-            Mercury
-          </MercuryAnchor>
+          <MercuryAnchor to='/mercury'>Mercury</MercuryAnchor>
         </HeaderLi>
         <HeaderLi>
           <VenusAnchor to='/venus'>Venus</VenusAnchor>
         </HeaderLi>
         <HeaderLi>
-          <EarthAnchor to='/earth'>Earth</EarthAnchor>
+          <EarthAnchor
+            className={(navData) => (navData.isActive ? 'active' : '')}
+            to='/'
+          >
+            Earth
+          </EarthAnchor>
         </HeaderLi>
         <HeaderLi>
           <MarsAnchor to='/mars'>Mars</MarsAnchor>
