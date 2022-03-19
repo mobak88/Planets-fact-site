@@ -148,8 +148,19 @@ const Mercury = () => {
     <MainWrapper>
       <MainSection>
         <PlanetContainer>
-          <Planet src={planetImg} />
-          <PlanetGeology visibleGeo={visibleGeo} src={MercuryGeoImg} />
+          {MercuryImg ? (
+            <Planet src={planetImg} alt='Image of planet mercury' />
+          ) : (
+            <Planet
+              src={planetImg}
+              alt='Image of planet mercury and its structure'
+            />
+          )}
+          <PlanetGeology
+            visibleGeo={visibleGeo}
+            src={MercuryGeoImg}
+            alt={'Image of planet mercury and geology'}
+          />
         </PlanetContainer>
         <PlanetContentContainer>
           <Heading>{APIData[0].name}</Heading>

@@ -174,8 +174,19 @@ const Earth = () => {
     <MainWrapper>
       <MainSection>
         <EarthContainer>
-          <EarthPlanet src={planetImg} />
-          <EarthGeology visibleGeo={visibleGeo} src={EarthGeoImg} />
+          {EarthImg ? (
+            <EarthPlanet src={planetImg} alt='Image of planet earth' />
+          ) : (
+            <EarthPlanet
+              src={planetImg}
+              alt='Image of planet earth and its structure'
+            />
+          )}
+          <EarthGeology
+            visibleGeo={visibleGeo}
+            src={EarthGeoImg}
+            alt='Image of planet Earth and geology'
+          />
         </EarthContainer>
         <PlanetContentContainer>
           <Heading>{APIData[2].name}</Heading>
