@@ -33,7 +33,26 @@ const MobileMenuContainer = styled.div`
   padding: 2.4rem 2.4rem 6.7rem 2.4rem;
   display: flex;
   flex-direction: column;
-  display: ${({ active }) => (active ? 'block' : 'none')};
+
+  &.fadeInAnimation-enter {
+    transform: translateX(100%);
+  }
+
+  &.fadeInAnimation-enter-active {
+    transform: translateX(0%);
+    transition: transform
+      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+  }
+
+  &.fadeInAnimation-exit {
+    transform: translateX(0%);
+  }
+
+  &.fadeInAnimation-exit-active {
+    transform: translateX(100%);
+    transition: transform
+      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+  }
 `;
 
 const MobileNav = styled.nav``;
@@ -121,9 +140,9 @@ const MobileNavNeptune = styled(MobileAnchor)`
   }
 `;
 
-export const MobileNavigation = ({ mobileMenu, mobileMenuHandler }) => {
+export const MobileNavigation = ({ mobileMenuHandler }) => {
   return (
-    <MobileMenuContainer active={mobileMenu}>
+    <MobileMenuContainer>
       <MobileNav>
         <MobileUl>
           <MobileLi onClick={mobileMenuHandler}>

@@ -3,6 +3,7 @@ import Header from './components/header/Header';
 import { Routes, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyles';
 import Theme from './Theme';
+import { CSSTransition } from 'react-transition-group';
 import PageWrapper from './components/pageWrapper/PageWrapper';
 import Mercury from './pages/Mercury';
 import Venus from './pages/Venus';
@@ -19,7 +20,6 @@ function App() {
 
   const mobileMenuHandler = () => {
     setMobileMenu(!mobileMenu);
-    console.log(mobileMenu);
   };
 
   return (
@@ -27,10 +27,15 @@ function App() {
       <GlobalStyle />
       <Header mobileMenuHandler={mobileMenuHandler} mobileMenu={mobileMenu} />
       <PageWrapper>
-        <MobileNavigation
-          mobileMenu={mobileMenu}
-          mobileMenuHandler={mobileMenuHandler}
-        />
+        <CSSTransition
+          in={mobileMenu}
+          appear={true}
+          classNames='fadeInAnimation'
+          timeout={1000}
+          unmountOnExit
+        >
+          <MobileNavigation mobileMenuHandler={mobileMenuHandler} />
+        </CSSTransition>
         <Routes>
           <Route path='/' element={<Mercury />} />
           <Route path='/venus' element={<Venus />} />
