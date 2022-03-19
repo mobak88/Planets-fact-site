@@ -24,7 +24,7 @@ const HeaderLi = styled.li`
 `;
 
 const HeaderAnchor = styled(NavLink)`
-  color: rgba(255, 255, 255, 0.75);
+  color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
   padding-top: 2.859rem;
   cursor: pointer;
