@@ -26,12 +26,13 @@ const HeaderLi = styled.li`
 const HeaderAnchor = styled(NavLink)`
   color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
-  padding-top: 2.859rem;
+  padding-top: 3.3rem;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
   font-family: 'Spartan', sans-serif;
   font-size: 1.1rem;
+  letter-spacing: 0.1rem;
 
   @media screen and (max-width: 1165px) {
     &.active {
