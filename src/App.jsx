@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Header from './components/header/Header';
 import { Routes, Route } from 'react-router-dom';
 import GlobalStyle from './globalStyles';
@@ -14,12 +15,22 @@ import Neptune from './pages/Neptune';
 import { MobileNavigation } from './components/header/MobileNavigation';
 
 function App() {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const mobileMenuHandler = () => {
+    setMobileMenu(!mobileMenu);
+    console.log(mobileMenu);
+  };
+
   return (
     <Theme>
       <GlobalStyle />
-      <Header />
+      <Header mobileMenuHandler={mobileMenuHandler} mobileMenu={mobileMenu} />
       <PageWrapper>
-        <MobileNavigation />
+        <MobileNavigation
+          mobileMenu={mobileMenu}
+          mobileMenuHandler={mobileMenuHandler}
+        />
         <Routes>
           <Route path='/' element={<Mercury />} />
           <Route path='/venus' element={<Venus />} />

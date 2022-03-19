@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Chevron from '/icon-chevron.svg';
@@ -121,33 +121,33 @@ const MobileNavNeptune = styled(MobileAnchor)`
   }
 `;
 
-export const MobileNavigation = ({ mobileMenu }) => {
+export const MobileNavigation = ({ mobileMenu, mobileMenuHandler }) => {
   return (
     <MobileMenuContainer active={mobileMenu}>
       <MobileNav>
         <MobileUl>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavMercury to='/'>Mercury</MobileNavMercury>
           </MobileLi>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavVenus to='/venus'>Venus</MobileNavVenus>
           </MobileLi>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavEarth to='/earth'>Earth</MobileNavEarth>
           </MobileLi>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavMars to='/mars'>Mars</MobileNavMars>
           </MobileLi>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavJupiter to='/jupiter'>Jupiter</MobileNavJupiter>
           </MobileLi>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavSaturn to='/saturn'>Saturn</MobileNavSaturn>
           </MobileLi>
-          <MobileLi>
+          <MobileLi onClick={mobileMenuHandler}>
             <MobileNavUranus to='/uranus'>Uranus</MobileNavUranus>
           </MobileLi>
-          <NeptuneLi>
+          <NeptuneLi onClick={mobileMenuHandler}>
             <MobileNavNeptune to='/neptune'>Neptune</MobileNavNeptune>
           </NeptuneLi>
         </MobileUl>
@@ -156,14 +156,7 @@ export const MobileNavigation = ({ mobileMenu }) => {
   );
 };
 
-export const HamburgerButton = () => {
-  const [mobileMenu, setMobileMenu] = useState(false);
-
-  const mobileMenuHandler = () => {
-    setMobileMenu(!mobileMenu);
-    console.log(mobileMenu);
-  };
-
+export const HamburgerButton = ({ mobileMenu, mobileMenuHandler }) => {
   return (
     <StyledHamburgerButton mobileMenu={mobileMenu} onClick={mobileMenuHandler}>
       <BurgerButtonBar />

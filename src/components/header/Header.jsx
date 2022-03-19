@@ -31,15 +31,15 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const Header = ({ mobileMenu }) => {
-  const test = () => {
-    console.log(mobileMenu);
-  };
+const Header = ({ mobileMenu, mobileMenuHandler }) => {
   return (
-    <HeaderContainer onClick={test}>
+    <HeaderContainer>
       <Logo />
       <Navigation />
-      <HamburgerButton />
+      <HamburgerButton
+        mobileMenuHandler={mobileMenuHandler}
+        mobileMenu={mobileMenu}
+      />
     </HeaderContainer>
   );
 };
