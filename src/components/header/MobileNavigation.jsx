@@ -41,7 +41,7 @@ const MobileMenuContainer = styled.div`
   &.fadeInAnimation-enter-active {
     transform: translateX(0%);
     transition: transform
-      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} ease-out;
   }
 
   &.fadeInAnimation-exit {
@@ -51,7 +51,7 @@ const MobileMenuContainer = styled.div`
   &.fadeInAnimation-exit-active {
     transform: translateX(100%);
     transition: transform
-      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} ease-in;
   }
 `;
 

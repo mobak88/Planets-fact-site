@@ -31,7 +31,7 @@ function App() {
           in={mobileMenu}
           appear={true}
           classNames='fadeInAnimation'
-          timeout={1000}
+          timeout={500}
           unmountOnExit
         >
           <MobileNavigation mobileMenuHandler={mobileMenuHandler} />
