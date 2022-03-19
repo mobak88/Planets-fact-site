@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import APIData from '../APIData';
 import MainWrapper from '../components/main/MainWrapper';

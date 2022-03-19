@@ -160,15 +160,12 @@ export const HamburgerButton = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const mobileMenuHandler = () => {
-    setMobileMenu((toggleBool) => !toggleBool);
+    setMobileMenu(!mobileMenu);
     console.log(mobileMenu);
   };
 
   return (
-    <StyledHamburgerButton
-      setBurgerMenu={setMobileMenu}
-      onClick={mobileMenuHandler}
-    >
+    <StyledHamburgerButton mobileMenu={mobileMenu} onClick={mobileMenuHandler}>
       <BurgerButtonBar />
       <BurgerButtonBar />
       <BurgerButtonBar />

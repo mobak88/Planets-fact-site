@@ -31,9 +31,12 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ mobileMenu }) => {
+  const test = () => {
+    console.log(mobileMenu);
+  };
   return (
-    <HeaderContainer>
+    <HeaderContainer onClick={test}>
       <Logo />
       <Navigation />
       <HamburgerButton />

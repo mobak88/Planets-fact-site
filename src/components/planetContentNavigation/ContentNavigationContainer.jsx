@@ -23,8 +23,12 @@ const ButtonsContainer = styled.div`
     flex-direction: row;
     justify-self: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 2.4rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    justify-content: space-between;
   }
 `;
 

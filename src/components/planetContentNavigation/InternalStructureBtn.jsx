@@ -34,7 +34,6 @@ const ButtonInternal = styled.button`
     display: inline-block;
     height: 100%;
     border: none;
-    margin: auto;
 
     &::before {
       display: none;
