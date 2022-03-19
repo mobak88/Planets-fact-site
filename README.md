@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/Planets-facts-site%20)
+![](./public/Planets-facts-site.png)
 
 ### Links
 
