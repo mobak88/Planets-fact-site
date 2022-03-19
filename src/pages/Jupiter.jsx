@@ -175,8 +175,19 @@ const Jupiter = () => {
     <MainWrapper>
       <MainSection>
         <JupiterContainer>
-          <JupiterPlanet src={planetImg} />
-          <JupiterGeology visibleGeo={visibleGeo} src={JupiterGeoImg} />
+          {JupiterImg ? (
+            <JupiterPlanet src={planetImg} alt='Image of planet jupiter' />
+          ) : (
+            <JupiterPlanet
+              src={planetImg}
+              alt='Image of planet jupiter and its structure'
+            />
+          )}
+          <JupiterGeology
+            visibleGeo={visibleGeo}
+            src={JupiterGeoImg}
+            alt={'Image of planet jupiter and geology'}
+          />
         </JupiterContainer>
         <PlanetContentContainer>
           <Heading>{APIData[4].name}</Heading>

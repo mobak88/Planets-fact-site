@@ -11,8 +11,8 @@ const PlanetImg = styled.img`
   }
 `;
 
-const Planet = ({ src, className }) => {
-  return <PlanetImg className={className} src={src} />;
+const Planet = ({ src, className, alt }) => {
+  return <PlanetImg className={className} src={src} alt={alt} />;
 };
 
 export default Planet;

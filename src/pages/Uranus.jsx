@@ -175,8 +175,19 @@ const Uranus = () => {
     <MainWrapper>
       <MainSection>
         <UranusContainer>
-          <UranusPlanet src={planetImg} />
-          <UranusGeology visibleGeo={visibleGeo} src={UranusGeoImg} />
+          {UranusImg ? (
+            <UranusPlanet src={planetImg} alt='Image of planet uranus' />
+          ) : (
+            <UranusPlanet
+              src={planetImg}
+              alt='Image of planet uranus and its structure'
+            />
+          )}
+          <UranusGeology
+            visibleGeo={visibleGeo}
+            src={UranusGeoImg}
+            alt={'Image of planet uranus and geology'}
+          />
         </UranusContainer>
         <PlanetContentContainer>
           <Heading>{APIData[6].name}</Heading>

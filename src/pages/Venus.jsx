@@ -174,8 +174,19 @@ const Venus = () => {
     <MainWrapper>
       <MainSection>
         <VenusContainer>
-          <VenusPlanet src={planetImg} />
-          <VenusGeology visibleGeo={visibleGeo} src={VenusGeoImg} />
+          {VenusImg ? (
+            <VenusPlanet src={planetImg} alt='Image of planet venus' />
+          ) : (
+            <VenusPlanet
+              src={planetImg}
+              alt='Image of planet venus and its structure'
+            />
+          )}
+          <VenusGeology
+            visibleGeo={visibleGeo}
+            src={VenusGeoImg}
+            alt={'Image of planet venus and geology'}
+          />
         </VenusContainer>
         <PlanetContentContainer>
           <Heading>{APIData[1].name}</Heading>

@@ -174,8 +174,19 @@ const Mars = () => {
     <MainWrapper>
       <MainSection>
         <MarsContainer>
-          <MarsPlanet src={planetImg} />
-          <MarsGeology visibleGeo={visibleGeo} src={MarsGeoImg} />
+          {MarsImg ? (
+            <MarsPlanet src={planetImg} alt='Image of planet mars' />
+          ) : (
+            <MarsPlanet
+              src={planetImg}
+              alt='Image of planet mars and its structure'
+            />
+          )}
+          <MarsGeology
+            visibleGeo={visibleGeo}
+            src={MarsGeoImg}
+            alt={'Image of planet mars and geology'}
+          />
         </MarsContainer>
         <PlanetContentContainer>
           <Heading>{APIData[3].name}</Heading>

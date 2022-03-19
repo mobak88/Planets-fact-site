@@ -17,8 +17,15 @@ const GeologyImg = styled.img`
   }
 `;
 
-const PlanetGeology = ({ className, src, visibleGeo }) => {
-  return <GeologyImg className={className} visible={visibleGeo} src={src} />;
+const PlanetGeology = ({ className, src, visibleGeo, alt }) => {
+  return (
+    <GeologyImg
+      className={className}
+      visible={visibleGeo}
+      src={src}
+      alt={alt}
+    />
+  );
 };
 
 export default PlanetGeology;

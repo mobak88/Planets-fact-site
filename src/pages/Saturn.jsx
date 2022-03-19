@@ -179,8 +179,19 @@ const Saturn = () => {
     <MainWrapper>
       <MainSection>
         <SaturnContainer>
-          <SaturnPlanet src={planetImg} />
-          <SaturnGeology visibleGeo={visibleGeo} src={SaturnGeoImg} />
+          {SaturnImg ? (
+            <SaturnPlanet src={planetImg} alt='Image of planet saturn' />
+          ) : (
+            <SaturnPlanet
+              src={planetImg}
+              alt='Image of planet saturn and its structure'
+            />
+          )}
+          <SaturnGeology
+            visibleGeo={visibleGeo}
+            src={SaturnGeoImg}
+            alt={'Image of planet saturn and geology'}
+          />
         </SaturnContainer>
         <PlanetContentContainer>
           <Heading>{APIData[5].name}</Heading>

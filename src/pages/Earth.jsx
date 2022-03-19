@@ -185,7 +185,7 @@ const Earth = () => {
           <EarthGeology
             visibleGeo={visibleGeo}
             src={EarthGeoImg}
-            alt='Image of planet Earth and geology'
+            alt='Image of planet earth and geology'
           />
         </EarthContainer>
         <PlanetContentContainer>
