@@ -37,21 +37,18 @@ const Content = styled.p`
   }
 `;
 
-const PlanetContent = ({ children, className, content }) => {
+const PlanetContent = ({ children, className }) => {
   return (
     <ContentWrapper>
       <SwitchTransition mode='out-in'>
         <CSSTransition
-          in={content}
           classNames='fadeInAnimation'
           addEndListener={(node, done) => {
             node.addEventListener('transitionend', done, false);
           }}
           key={Math.random() * 100}
         >
-          <Content content={content} className={className}>
-            {children}
-          </Content>
+          <Content className={className}>{children}</Content>
         </CSSTransition>
       </SwitchTransition>
     </ContentWrapper>
