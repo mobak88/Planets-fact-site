@@ -31,16 +31,27 @@ const UranusContainer = styled(PlanetContainer)`
   height: 45.8rem;
   width: 45.8rem;
   margin-top: 0rem;
+
+  @media screen and (max-width: 720px) {
+    margin-top: 3rem;
+    height: 21rem;
+    width: 21rem;
+  }
 `;
 
 const UranusPlanet = styled(Planet)`
-  height: 45.8rem;
-  width: 45.8rem;
+  height: 100%;
+  width: 100%;
 `;
 
 const UranusGeology = styled(PlanetGeology)`
   top: 31rem;
   left: 14.8rem;
+
+  @media screen and (max-width: 720px) {
+    top: 14rem;
+    left: 6.5rem;
+  }
 `;
 
 const UranusOverviewBtn = styled(OverviewBtn)`
@@ -50,6 +61,20 @@ const UranusOverviewBtn = styled(OverviewBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.caribbeanGreen};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.caribbeanGreen + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -63,6 +88,20 @@ const UranusInternalStructureBtn = styled(InternalStructureBtn)`
       background-color: ${({ theme }) => theme.colors.caribbeanGreen};
     }
   }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.caribbeanGreen + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 const UranusSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
@@ -72,6 +111,20 @@ const UranusSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.caribbeanGreen};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.caribbeanGreen + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;

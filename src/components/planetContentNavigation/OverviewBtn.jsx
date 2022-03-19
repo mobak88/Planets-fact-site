@@ -7,7 +7,6 @@ const ButtonOverview = styled.button`
   color: ${({ theme }) => theme.colors.white};
   background-color: transparent;
   border: 0.1rem solid ${({ theme }) => theme.colors.darkGrey};
-  width: 35rem;
   height: 4.8rem;
   font-weight: bold;
   font-size: 1.2rem;
@@ -27,13 +26,13 @@ const ButtonOverview = styled.button`
   }
 
   @media screen and (max-width: 1165px) {
-    width: 28rem;
     font-size: 0.9rem;
     height: 4rem;
   }
 
   @media screen and (max-width: 720px) {
-    width: 100%;
+    display: inline-block;
+    height: 100%;
     border: none;
 
     &::before {

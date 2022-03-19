@@ -31,16 +31,26 @@ const NeptuneContainer = styled(PlanetContainer)`
   height: 45rem;
   width: 45rem;
   margin-top: 3rem;
+
+  @media screen and (max-width: 720px) {
+    height: 20rem;
+    width: 20rem;
+  }
 `;
 
 const NeptunePlanet = styled(Planet)`
-  height: 45rem;
-  width: 45rem;
+  height: 100%;
+  width: 100%;
 `;
 
 const NeptuneGeology = styled(PlanetGeology)`
   top: 30.5rem;
   left: 14.3rem;
+
+  @media screen and (max-width: 720px) {
+    top: 14rem;
+    left: 5.9rem;
+  }
 `;
 
 const NeptuneOverviewBtn = styled(OverviewBtn)`
@@ -50,6 +60,20 @@ const NeptuneOverviewBtn = styled(OverviewBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.blue};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.blue + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -63,6 +87,20 @@ const NeptuneInternalStructureBtn = styled(InternalStructureBtn)`
       background-color: ${({ theme }) => theme.colors.blue};
     }
   }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.blue + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 const NeptuneSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
@@ -72,6 +110,20 @@ const NeptuneSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.blue};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.blue + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;

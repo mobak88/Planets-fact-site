@@ -23,7 +23,7 @@ const ButtonsContainer = styled.div`
     flex-direction: row;
     justify-self: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0 2.4rem;
   }
 `;

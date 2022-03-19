@@ -31,16 +31,27 @@ const SaturnContainer = styled(PlanetContainer)`
   height: 58.2rem;
   width: 58.2rem;
   margin-top: -7rem;
+
+  @media screen and (max-width: 720px) {
+    margin-top: 3rem;
+    height: 28rem;
+    width: 28rem;
+  }
 `;
 
 const SaturnPlanet = styled(Planet)`
-  height: 58.2rem;
-  width: 58.2rem;
+  height: 100%;
+  width: 100%;
 `;
 
 const SaturnGeology = styled(PlanetGeology)`
   top: 35rem;
   left: 20.9rem;
+
+  @media screen and (max-width: 720px) {
+    top: 16.5rem;
+    left: 9.8rem;
+  }
 `;
 
 const SaturnOverviewBtn = styled(OverviewBtn)`
@@ -50,6 +61,20 @@ const SaturnOverviewBtn = styled(OverviewBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.rustyNail};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.rustyNail + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -63,6 +88,20 @@ const SaturnInternalStructureBtn = styled(InternalStructureBtn)`
       background-color: ${({ theme }) => theme.colors.rustyNail};
     }
   }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.rustyNail + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 const SaturnSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
@@ -72,6 +111,20 @@ const SaturnSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.rustyNail};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.rustyNail + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;

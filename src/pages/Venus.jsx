@@ -31,16 +31,26 @@ const VenusContainer = styled(PlanetContainer)`
   height: 40rem;
   width: 40rem;
   margin-top: 6rem;
+
+  @media screen and (max-width: 720px) {
+    height: 18rem;
+    width: 18rem;
+  }
 `;
 
 const VenusPlanet = styled(Planet)`
-  height: 40rem;
-  width: 40rem;
+  height: 100%;
+  width: 100%;
 `;
 
 const VenusGeology = styled(PlanetGeology)`
   top: 28rem;
   left: 11.85rem;
+
+  @media screen and (max-width: 720px) {
+    top: 13rem;
+    left: 4.9rem;
+  }
 `;
 
 const VenusOverviewBtn = styled(OverviewBtn)`
@@ -50,6 +60,20 @@ const VenusOverviewBtn = styled(OverviewBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.tulipTree};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.tulipTree + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -63,6 +87,20 @@ const VenusInternalStructureBtn = styled(InternalStructureBtn)`
       background-color: ${({ theme }) => theme.colors.tulipTree};
     }
   }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.tulipTree + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 const VenusSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
@@ -72,6 +110,20 @@ const VenusSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.tulipTree};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.tulipTree + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;

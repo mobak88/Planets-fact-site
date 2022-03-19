@@ -31,16 +31,26 @@ const MarsContainer = styled(PlanetContainer)`
   height: 33.6rem;
   width: 33.6rem;
   margin-top: 9rem;
+
+  @media screen and (max-width: 720px) {
+    height: 17rem;
+    width: 17rem;
+  }
 `;
 
 const MarsPlanet = styled(Planet)`
-  height: 33.6rem;
-  width: 33.6rem;
+  height: 100%;
+  width: 100%;
 `;
 
 const MarsGeology = styled(PlanetGeology)`
   top: 24.5rem;
   left: 8.8rem;
+
+  @media screen and (max-width: 720px) {
+    top: 12.2rem;
+    left: 4.3rem;
+  }
 `;
 
 const MarsOverviewBtn = styled(OverviewBtn)`
@@ -50,6 +60,20 @@ const MarsOverviewBtn = styled(OverviewBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.valencia};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.valencia + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -63,6 +87,20 @@ const MarsInternalStructureBtn = styled(InternalStructureBtn)`
       background-color: ${({ theme }) => theme.colors.valencia};
     }
   }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.valencia + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 const MarsSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
@@ -72,6 +110,20 @@ const MarsSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.valencia};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.valencia + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;

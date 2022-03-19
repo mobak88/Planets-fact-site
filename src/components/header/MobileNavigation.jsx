@@ -121,9 +121,9 @@ const MobileNavNeptune = styled(MobileAnchor)`
   }
 `;
 
-export const MobileNavigation = ({ burgerMenu }) => {
+export const MobileNavigation = ({ mobileMenu }) => {
   return (
-    <MobileMenuContainer active={burgerMenu}>
+    <MobileMenuContainer active={mobileMenu}>
       <MobileNav>
         <MobileUl>
           <MobileLi>
@@ -157,15 +157,18 @@ export const MobileNavigation = ({ burgerMenu }) => {
 };
 
 export const HamburgerButton = () => {
-  const [burgerMenu, setBurgerMenu] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
-  const burgerMenuHandler = () => {
-    setBurgerMenu((toggleBool) => !toggleBool);
-    console.log(burgerMenu);
+  const mobileMenuHandler = () => {
+    setMobileMenu((toggleBool) => !toggleBool);
+    console.log(mobileMenu);
   };
 
   return (
-    <StyledHamburgerButton burgerMenu={burgerMenu} onClick={burgerMenuHandler}>
+    <StyledHamburgerButton
+      setBurgerMenu={setMobileMenu}
+      onClick={mobileMenuHandler}
+    >
       <BurgerButtonBar />
       <BurgerButtonBar />
       <BurgerButtonBar />

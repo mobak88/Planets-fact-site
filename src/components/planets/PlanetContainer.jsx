@@ -43,6 +43,9 @@ const Planet = styled.div`
     grid-column: 1 / span 1;
     justify-self: center;
     grid-area: planet;
+    margin: 5rem 0 5rem 0;
+    width: 14.1rem;
+    height: 14.1rem;
   }
 `;
 

@@ -31,16 +31,27 @@ const JupiterContainer = styled(PlanetContainer)`
   height: 58.2rem;
   width: 58.2rem;
   margin-top: 0rem;
+
+  @media screen and (max-width: 720px) {
+    margin-top: 3rem;
+    height: 25rem;
+    width: 25rem;
+  }
 `;
 
 const JupiterPlanet = styled(Planet)`
-  height: 58.2rem;
-  width: 58.2rem;
+  height: 100%;
+  width: 100%;
 `;
 
 const JupiterGeology = styled(PlanetGeology)`
   top: 37rem;
   left: 20.9rem;
+
+  @media screen and (max-width: 720px) {
+    top: 16rem;
+    left: 8.3rem;
+  }
 `;
 
 const JupiterOverviewBtn = styled(OverviewBtn)`
@@ -50,6 +61,20 @@ const JupiterOverviewBtn = styled(OverviewBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.bloodMoon};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.bloodMoon + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;
@@ -63,6 +88,20 @@ const JupiterInternalStructureBtn = styled(InternalStructureBtn)`
       background-color: ${({ theme }) => theme.colors.bloodMoon};
     }
   }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.bloodMoon + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 `;
 
 const JupiterSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
@@ -72,6 +111,20 @@ const JupiterSurfaceGeologyBtn = styled(SurfaceGeologyBtn)`
   @media screen and (max-width: 1165px) {
     &:hover {
       background-color: ${({ theme }) => theme.colors.bloodMoon};
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    background-color: ${(props) =>
+      props.active ? 'transparent' : 'transparent'};
+
+    border-bottom: ${(props) =>
+      props.active
+        ? ({ theme }) => theme.colors.bloodMoon + ' 4px solid'
+        : 'transparent'};
+
+    &:hover {
+      background-color: transparent;
     }
   }
 `;

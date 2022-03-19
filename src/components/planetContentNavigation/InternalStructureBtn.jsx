@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { fadeInAnimationBottomToTop } from '../animations/Animations';
 
@@ -7,7 +7,6 @@ const ButtonInternal = styled.button`
   color: ${({ theme }) => theme.colors.white};
   background-color: transparent;
   border: 0.1rem solid ${({ theme }) => theme.colors.darkGrey};
-  width: 35rem;
   height: 4.8rem;
   font-weight: bold;
   font-size: 1.2rem;
@@ -27,14 +26,15 @@ const ButtonInternal = styled.button`
   }
 
   @media screen and (max-width: 1165px) {
-    width: 28rem;
     font-size: 0.9rem;
     height: 4rem;
   }
 
   @media screen and (max-width: 720px) {
-    width: 100%;
+    display: inline-block;
+    height: 100%;
     border: none;
+    margin: auto;
 
     &::before {
       display: none;
@@ -47,13 +47,22 @@ const InternalStructureBtn = ({
   btnStructureActiveHandler,
   active,
 }) => {
+  const [buttonText, setButtonText] = useState('Internal Structure');
+  const mobileWindow = window.matchMedia('(max-width: 720px)');
+
+  useEffect(() => {
+    mobileWindow.matches
+      ? setButtonText('Internal')
+      : setButtonText('Internal Structure');
+  }, [buttonText]);
+
   return (
     <ButtonInternal
       active={active}
       className={className}
       onClick={btnStructureActiveHandler}
     >
-      Internal Structure
+      {buttonText}
     </ButtonInternal>
   );
 };

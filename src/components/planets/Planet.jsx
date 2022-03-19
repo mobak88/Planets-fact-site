@@ -6,8 +6,8 @@ const PlanetImg = styled.img`
   height: 29rem;
 
   @media screen and (max-width: 720px) {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
 `;
 
