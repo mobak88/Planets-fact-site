@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Fact = styled.h2`
+const Fact = styled.h3`
   color: ${({ theme }) => theme.colors.white};
 
   @media screen and (max-width: 1165px) {

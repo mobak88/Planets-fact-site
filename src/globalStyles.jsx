@@ -86,40 +86,38 @@ const GlobalStyle = createGlobalStyle`
             scroll-behavior: auto !important;
         }
     }
-
-    h1,h2 {
-        font-family: 'Antonio', sans-serif;
-    }
-
-    h3,h4 {
-        font-family: 'Spartan', sans-serif;
-    }
-
+    
     h1 {
+        font-family: 'Antonio', sans-serif;
         font-size: 8rem;
         line-height: 10.3rem;
         font-weight: 500;
     }
-
+    
     h2 {
-        font-size: 4rem;
-        line-height: 5.2rem;
-        font-weight: 500;
-        letter-spacing: -.15rem;
-    }
-
-    h3 {
-        font-size: 1.2rem;
-        line-height: 2.5rem;
-        font-weight: 700;
-        letter-spacing: 2.6rem;
-    }
-
-    h4 {
+        font-family: 'Spartan', sans-serif;
         font-size: 1.1rem;
         line-height: 2.5rem;
         font-weight: 700;
         letter-spacing: .1rem;
+    }
+    
+    h3 {
+        font-family: 'Antonio', sans-serif;
+        font-size: 4rem;
+        line-height: 5.2rem;
+        font-weight: 500;
+        letter-spacing: -.15rem;
+        
+        
+    }
+    
+    h4 {
+        font-family: 'Spartan', sans-serif;
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 2.6rem;
     }
 `;
 

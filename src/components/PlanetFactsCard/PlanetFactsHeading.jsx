@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FactsHeading = styled.h4`
+const FactsHeading = styled.h2`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.whiteTransparent};
 
