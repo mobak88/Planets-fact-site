@@ -50,3 +50,4 @@ Among the things I learned:
 - React router dom
 - Props and passing props
 - React transition group
+- Component composition
