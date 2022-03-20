@@ -19,7 +19,7 @@ function App() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const mobileMenuHandler = () => {
-    setMobileMenu(!mobileMenu);
+    setMobileMenu((mobileMenu) => !mobileMenu);
   };
 
   return (
