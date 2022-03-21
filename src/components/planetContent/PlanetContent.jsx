@@ -19,7 +19,7 @@ const Content = styled.p`
   &.fadeInAnimation-enter-active {
     opacity: 1;
     transition: opacity
-      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+      ${({ theme }) => theme.transitionDuration.fadeInDuration} linear;
   }
 
   &.fadeInAnimation-exit {
@@ -29,7 +29,7 @@ const Content = styled.p`
   &.fadeInAnimation-exit-active {
     opacity: 0;
     transition: opacity
-      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+      ${({ theme }) => theme.transitionDuration.fadeInDuration} linear;
   }
 
   @media screen and (max-width: 1165px) {

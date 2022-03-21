@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
-import { fadeInAnimationTopToBottom } from '../animations/Animations';
 
 const Planet = styled.div`
   width: 29rem;
@@ -10,17 +9,18 @@ const Planet = styled.div`
   margin-top: 12rem;
   justify-self: end;
   position: relative;
-  animation: ${fadeInAnimationTopToBottom}
-    ${({ theme }) => theme.transitionDuration.duration} ease-out;
 
   &.fadeInAnimation-enter {
     opacity: 0;
+    transform: translateY(-50%);
   }
 
   &.fadeInAnimation-enter-active {
     opacity: 1;
+    transform: translateY(0%);
     transition: opacity
-      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+        ${({ theme }) => theme.transitionDuration.fadeInDuration} linear,
+      transform ${({ theme }) => theme.transitionDuration.fadeInDuration} linear;
   }
 
   &.fadeInAnimation-exit {
@@ -30,7 +30,20 @@ const Planet = styled.div`
   &.fadeInAnimation-exit-active {
     opacity: 0;
     transition: opacity
-      ${({ theme }) => theme.transitionDuration.slideInToLeftDuration} linear;
+      ${({ theme }) => theme.transitionDuration.fadeInDuration} linear;
+  }
+
+  &.fadeInAnimation-appear {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  &.fadeInAnimation-appear-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity ${({ theme }) => theme.transitionDuration.duration}
+        linear,
+      transform ${({ theme }) => theme.transitionDuration.duration} linear;
   }
 
   @media screen and (max-width: 1165px) {
@@ -53,6 +66,8 @@ const PlanetContainer = ({ children, className }) => {
   return (
     <SwitchTransition>
       <CSSTransition
+        appear={true}
+        in={true}
         classNames='fadeInAnimation'
         addEndListener={(node, done) => {
           node.addEventListener('transitionend', done, false);

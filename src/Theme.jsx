@@ -24,7 +24,7 @@ const theme = {
 
   transitionDuration: {
     duration: '.8s',
-    slideInToLeftDuration: '.5s',
+    fadeInDuration: '.5s',
   },
 };
 
